@@ -13,7 +13,7 @@ export default function HeroSection() {
           <div className="flex flex-col justify-center space-y-4 sm:mx-[140px]">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                I'm Aditya Zaveri
+                I'm Aditya Zaveri.
                 <span className="text-gray-500 dark:text-gray-400 block mt-2">
                   <BlurText
                     text="Full Stack Developer"
@@ -31,16 +31,17 @@ export default function HeroSection() {
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button size="lg" className="gap-1.5 group">
-                View My Work
+                <a href="#projects">View My Work</a>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button  size="lg" variant="outline">
-                <a href="#contact_me">Contact Me</a> 
+                <a href="#workex">View Experience</a> 
               </Button>
+              
             </div>
             <div className="flex items-center gap-4 pt-4">
               <Link
-                href="https://github.com"
+                href="https://github.com/zaveriadi7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +51,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/aditya-zaveri/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -60,7 +61,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <a
-                href="mailto:adityazaveri.com"
+                href="#contact_me"
                 target="_blank"
                 rel="noopener noreferrer"
               >
