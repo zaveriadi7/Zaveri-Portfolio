@@ -3,17 +3,21 @@ import React, { useEffect, useRef } from "react";
 const logos = [
   "ReactJS",
   "NextJS",
+  "Angular",
   "TailwindCSS",
   "JavaScript",
   "TypeScript",
   "NodeJS",
   "ExpressJS",
   "PostgreSQL",
+  "MySQL",
   "Python",
   "AWS",
   "Docker",
   "Git",
   "GitHub",
+  "C++",
+  "DSA"
 ];
 
 export default function LogoCarousel() {
@@ -55,7 +59,7 @@ export default function LogoCarousel() {
               {logos.map((title, idx) => (
                 <h1
                   key={`${dupIndex}-${idx}`}
-                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-serif text-white px-4"
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-serif text-white px-12"
                 >
                   {title}
                 </h1>

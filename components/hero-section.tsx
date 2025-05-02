@@ -34,8 +34,8 @@ export default function HeroSection() {
                 View My Work
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button size="lg" variant="outline">
-                Contact Me
+              <Button  size="lg" variant="outline">
+                <a href="#contact_me">Contact Me</a> 
               </Button>
             </div>
             <div className="flex items-center gap-4 pt-4">
@@ -71,7 +71,7 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="hidden sm:block relative w-[400px] aspect-square rounded-full border-8 border-white shadow-xl dark:border-gray-800">
+          <div className="hidden sm:block relative w-[400px] aspect-square rounded-full border-8 border-white shadow-xl dark:border-gray-800 sm:mx-auto ">
             {/* Central emoji */}
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-full">
               <span className="text-6xl">👨‍💻</span>
@@ -91,7 +91,7 @@ export default function HeroSection() {
                 return (
                   <div
                     key={index}
-                    className="absolute left-[130px] top-[177px] hidden md:block"
+                    className="absolute left-[130px] top-[177px] hidden sm:block"
                     style={{
                       transform: `rotate(${angle}deg) translateX(200px)`, // ✅ Removed rotate(-angle)
                       zIndex: 50,

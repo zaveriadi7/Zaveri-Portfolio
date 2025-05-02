@@ -10,6 +10,7 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		scrollBehavior: ['responsive', 'smooth'],
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import RotatingText from "./ui/changingText"
 
 export default function SkillsSection() {
   return (
@@ -8,7 +9,20 @@ export default function SkillsSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Skills</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Expertise</h2>
+            <div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My <RotatingText
+  texts={['Skills', 'Expertise', 'Technologies', 'Tools','Hobbies']}
+  mainClassName="px-2 sm:px-2 md:px-3  text-gray-500 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+  staggerFrom={"last"}
+  initial={{ y: "100%" }}
+  animate={{ y: 0 }}
+  exit={{ y: "-120%" }}
+  staggerDuration={0.025}
+  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+  rotationInterval={2000}
+/></h2>
+</div>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               I've worked with a wide range of technologies throughout my career. Here are some of the key areas where I
               excel.
