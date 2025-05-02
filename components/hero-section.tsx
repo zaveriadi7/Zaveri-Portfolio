@@ -80,7 +80,7 @@ export default function HeroSection() {
   {[
     "Backend Developer",
     "Cloud Solutions Architect",
-    "Coffee Person",
+    
     "Frontend Developer",
     "UI/UX Advocate",
     "Agile Developer",
