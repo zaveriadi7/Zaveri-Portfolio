@@ -4,9 +4,11 @@ import ContactSection from "@/components/contact-section"
 import HeroSection from "@/components/hero-section"
 import ProjectsSection from "@/components/projects-section"
 import SkillsSection from "@/components/skills-section"
+import Navbar from "@/components/ui/navbar"
 
 export default function Home() {
   return (
+    <>      <Navbar />
     <main className="flex min-h-screen flex-col">
       <HeroSection />
       <AboutSection />
@@ -14,5 +16,7 @@ export default function Home() {
       <ProjectsSection />
       <ContactSection />
     </main>
+    </>
+
   )
 }
