@@ -62,7 +62,7 @@ export default function ContactSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Contact</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get In Touch</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Lets Get in Touch?</h2>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Potential collaboration? I'd love to hear from you.
             </p>

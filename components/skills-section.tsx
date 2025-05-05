@@ -2,9 +2,12 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import RotatingText from "./ui/changingText"
 
+import Certifications from "./ui/imageCarousel"
+
 export default function SkillsSection() {
   return (
-    <section id="skills" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+    <>
+    <section id="skills" className="w-full py-12 md:py-24 lg:py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -42,9 +45,12 @@ export default function SkillsSection() {
                 <Badge>TypeScript</Badge>
                 <Badge>Tailwind CSS</Badge>
                 <Badge>HTML/CSS</Badge>
+                <Badge>Angular</Badge>
+                <Badge>JQuery</Badge>
+                <Badge>BootStrap</Badge>
+                <Badge>Shadcn</Badge>
                 <Badge>JavaScript</Badge>
                 <Badge>Redux</Badge>
-                <Badge>Framer Motion</Badge>
               </div>
             </CardContent>
           </Card>
@@ -58,34 +64,50 @@ export default function SkillsSection() {
                 <Badge>Node.js</Badge>
                 <Badge>Express</Badge>
                 <Badge>Python</Badge>
-                <Badge>Django</Badge>
-                <Badge>GraphQL</Badge>
                 <Badge>REST APIs</Badge>
                 <Badge>PostgreSQL</Badge>
-                <Badge>MongoDB</Badge>
+                <Badge>MySQL</Badge>
               </div>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>DevOps & Tools</CardTitle>
+              <CardTitle>Core Languages & Tools</CardTitle>
               <CardDescription>Streamlining development and deployment</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
+                <Badge>C++</Badge>
+                <Badge>Python</Badge>
+                <Badge>DSA</Badge>
                 <Badge>Git</Badge>
-                <Badge>GitHub Actions</Badge>
-                <Badge>Docker</Badge>
-                <Badge>AWS</Badge>
+                {/* <Badge>GitHub Actions</Badge>
+                <Badge>Docker</Badge> */}
+                <Badge>AWS Solutions Architect</Badge>
                 <Badge>Vercel</Badge>
-                <Badge>CI/CD</Badge>
+                {/* <Badge>CI/CD</Badge>
                 <Badge>Jest</Badge>
-                <Badge>Cypress</Badge>
+                <Badge>Cypress</Badge> */}
               </div>
             </CardContent>
           </Card>
+          
         </div>
       </div>
     </section>
+    <section id="Certifications" className="w-full bg-gray-50 dark:bg-gray-900">
+    <div className="container px-4 md:px-6 mx-auto">
+      <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="space-y-2">
+          <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Certifications</div>
+          <div>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">My Certifications</h2>
+</div>
+        </div>
+      </div>
+    </div>
+      <Certifications/>
+  </section>
+  </>
   )
 }

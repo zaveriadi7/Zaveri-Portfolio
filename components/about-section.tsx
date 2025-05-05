@@ -16,9 +16,8 @@ export default function AboutSection() {
             </h2>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               I'm a passionate full stack developer with a focus on creating
-              intuitive and performant web applications. With over 5 years of
-              experience in the industry, I've worked with a variety of
-              technologies and frameworks to deliver exceptional digital
+              intuitive and performant web applications. I am currently in my last year of BTech CSE from Vellore Institute of Technology. I work with a variety of
+              technologies and frameworks to deliver beautiful and simple
               experiences.
             </p>
           </div>
@@ -28,12 +27,10 @@ export default function AboutSection() {
             <div className="space-y-2">
               <h3 className="text-xl font-bold">My Background</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                I started my journey as a self-taught developer, building small
-                websites and applications in my spare time. After completing my
-                Computer Science degree, I joined a startup where I honed my
-                skills in modern web development. I've since worked with
-                companies of all sizes, from early-stage startups to established
-                enterprises.
+                I started my journey with pythonas a self-taught developer, building small
+                applications in my spare time. After completing my
+                Computer Science degree, I joined Classplus, a startup aimed at transforming modern day learning where I honed my
+                skills in web development. 
               </p>
             </div>
             <ul className="grid gap-2">
@@ -43,15 +40,15 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>5+ Years Professional Experience</span>
+                <span>Worked with 5+ Projects</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>Worked with 20+ Clients</span>
+                <span>Delivered every Project on Time</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>Delivered 30+ Successful Projects</span>
+                <span>Delivered every Project on Time</span>
               </li>
             </ul>
           </div>
@@ -79,6 +76,7 @@ export default function AboutSection() {
                 <CheckCircle className="h-4 w-4 text-gray-500" />
                 <span>Accessible Web Applications</span>
               </li>
+              
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
                 <span>Continuous Learning & Improvement</span>
