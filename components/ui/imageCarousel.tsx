@@ -77,7 +77,7 @@ export default function Certifications() {
   }, [isPaused]);
 
   return (
-<div className="overflow-hidden pt-8 mt-10 bg-gradient-to-r from-black via-gray-400 via-gray-700 via-gray-400 to-black ">
+    <div className="pt-8 mt-10 bg-gradient-to-r from-black via-gray-400 via-gray-700 via-gray-400 to-black overflow-x-hidden">
 <div
         ref={scrollRef}
         className="flex -space-x-5 lg:space-x-6 overflow-x-auto scrollbar pb-1 justify-center"
@@ -87,7 +87,7 @@ export default function Certifications() {
         {certifications.map((cert) => (
           <div
             key={cert.id}
-            className="max-w-[300px] flex-shrink-0 bg-transparent rounded-2xl overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:animate-pulse "
+            className="max-w-[300px] flex-shrink-0 bg-transparent rounded-2xl overflow-hidden transform transition-transform duration-300 hover:scale-100 hover:animate-pulse "
           >
             <a href={cert.href} >
             <img
