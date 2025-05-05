@@ -106,7 +106,7 @@ export default function SkillsSection() {
         </div>
       </div>
     </div>
-      {/* <Certifications/> */}
+      <Certifications/>
   </section>
   </>
   )
