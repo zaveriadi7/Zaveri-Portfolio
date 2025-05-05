@@ -7,10 +7,10 @@ import LogoCarousel from "../components/ui/infiniteScroller";
 export default function HeroSection() {
   return (
     <>
-    <section id="hero" className="w-full py-12 md:py-24 lg:py-36 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 ">
+    <section id="hero" className="w-full py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 ">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
-          <div className="flex flex-col justify-center space-y-4 sm:mx-[140px]">
+          <div className="flex flex-col justify-center space-y-4 sm:mx-[140px] ">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                 I'm Aditya Zaveri.
@@ -72,7 +72,7 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="hidden sm:block relative w-[400px] aspect-square rounded-full border-8 border-white shadow-xl dark:border-gray-800 sm:mx-auto ">
+          <div className="hidden sm:block relative w-[400px] xl:max-w-[300px] aspect-square rounded-full border-8 border-white shadow-xl dark:border-gray-800 sm:mx-auto xl:m-0 xl:p-0">
             {/* Central emoji */}
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-full">
               <span className="text-6xl">👨‍💻</span>
@@ -92,7 +92,7 @@ export default function HeroSection() {
                 return (
                   <div
                     key={index}
-                    className="absolute left-[130px] top-[177px] hidden sm:block"
+                    className="absolute left-[130px] top-[177px] hidden sm:block xl:left-[80px] xl:top-[135px]"
                     style={{
                       transform: `rotate(${angle}deg) translateX(200px)`, // ✅ Removed rotate(-angle)
                       zIndex: 50,
