@@ -7,14 +7,14 @@ const certifications = [
     image: "https://images.credly.com/size/300x300/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
     description:
       "Issued by Amazon Web Services in January 2023.",
-    href:"https://www.credly.com/badges/0e284c3f-5164-4b21-8660-0d84737941bc/public_url"
+    href:"https://www.credly.com/badges/ac231f94-6119-47e0-ad63-15e40691b72a/public_url"
   },
   {
     id: 2,
     title: "Cloud Computing - IIT Kharagpur",
     image: "https://media.licdn.com/dms/image/v2/D562DAQFoGF7dC7izVQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1718168361896?e=1747026000&v=beta&t=JhWwPQpo-nncIawLRYUOlYP56btgA_w8sHk8gr8tfNo",
     description:
-      "Issued by Google Cloud in January 2025.",
+      "Issued by NPTEL. Scored 72% receiving elite badge.",
     href:"https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS17S45290199230380511"
   },
   {
@@ -77,28 +77,29 @@ export default function Certifications() {
   }, [isPaused]);
 
   return (
-    <div className="overflow-hidden pt-8 mt-10 bg-black">
-      <div
+<div className="overflow-hidden pt-8 mt-10 bg-gradient-to-r from-black via-gray-400 via-gray-700 via-gray-400 to-black ">
+<div
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-auto scrollbar pb-4 justify-center"
+        className="flex -space-x-5 lg:space-x-6 overflow-x-auto scrollbar pb-1 justify-center"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {certifications.map((cert) => (
           <div
             key={cert.id}
-            className="max-w-[300px] flex-shrink-0 bg-black shadow-xl rounded-2xl overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            className="max-w-[300px] flex-shrink-0 bg-transparent rounded-2xl overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:animate-pulse "
           >
-            <a href={cert.href}></a>
+            <a href={cert.href} >
             <img
               src={cert.image}
               alt={cert.title}
               className="w-full h-40 object-contain"
               
             />
-            <div className="p-4 text-center">
-              <a href={cert.href} className="text-lg text-white font-semibold mb-2 font-serif">{cert.title}</a>
-              <p className="text-white whitespace-pre-line text-sm font-serif">
+            </a>
+            <div className="p-2 text-center">
+              <a href={cert.href} className="text- text-white font-semibold mb-2 font-serif">{cert.title}</a>
+              <p className="text-white whitespace-pre-line text-sm font-merriweather">
                 {cert.description}
               </p>
             </div>

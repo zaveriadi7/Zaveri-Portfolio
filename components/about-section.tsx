@@ -14,7 +14,7 @@ export default function AboutSection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               My Journey
             </h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather">
               I'm a passionate full stack developer with a focus on creating
               intuitive and performant web applications. I am currently in my last year of BTech CSE from Vellore Institute of Technology. I work with a variety of
               technologies and frameworks to deliver beautiful and simple
@@ -22,19 +22,19 @@ export default function AboutSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:gap-12">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:gap-12 font-merriweather">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h3 className="text-xl font-bold">My Background</h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 dark:text-gray-400 font-merriweather">
                 I started my journey with pythonas a self-taught developer, building small
                 applications in my spare time. After completing my
                 Computer Science degree, I joined Classplus, a startup aimed at transforming modern day learning where I honed my
                 skills in web development. 
               </p>
             </div>
-            <ul className="grid gap-2">
-              <li className="flex items-center gap-2">
+            <ul className="grid gap-2 font-merriweather">
+              <li className="flex items-center gap-2 ">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
                 <span>Computer Science Degree</span>
               </li>
@@ -55,7 +55,7 @@ export default function AboutSection() {
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
               <h3 className="text-xl font-bold">My Approach</h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 dark:text-gray-400 font-merriweather">
                 I believe in writing clean, maintainable code that solves real
                 problems. My approach combines technical excellence with a deep
                 understanding of user needs. I'm passionate about accessibility,
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 meeting business objectives.
               </p>
             </div>
-            <ul className="grid gap-2">
+            <ul className="grid gap-2 font-merriweather">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
                 <span>User-Centered Design</span>

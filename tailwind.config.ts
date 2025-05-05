@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			merriweather: ['var(--font-merriweather)', 'serif'],
+		  },
 		scrollBehavior: ['responsive', 'smooth'],
   		colors: {
   			background: 'hsl(var(--background))',

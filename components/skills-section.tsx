@@ -26,31 +26,31 @@ export default function SkillsSection() {
   rotationInterval={2000}
 /></h2>
 </div>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather">
               I've worked with a wide range of technologies throughout my career. Here are some of the key areas where I
               excel.
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3 font-merriweather">
           <Card>
             <CardHeader>
               <CardTitle>Frontend Development</CardTitle>
-              <CardDescription>Building beautiful, responsive user interfaces</CardDescription>
+              <CardDescription >Building beautiful, responsive user interfaces</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                <Badge>React</Badge>
-                <Badge>Next.js</Badge>
-                <Badge>TypeScript</Badge>
-                <Badge>Tailwind CSS</Badge>
-                <Badge>HTML/CSS</Badge>
-                <Badge>Angular</Badge>
-                <Badge>JQuery</Badge>
-                <Badge>BootStrap</Badge>
-                <Badge>Shadcn</Badge>
-                <Badge>JavaScript</Badge>
-                <Badge>Redux</Badge>
+                <Badge variant={"secondary"}>React</Badge>
+                <Badge variant={"secondary"}>Next.js</Badge>
+                <Badge variant={"secondary"}>TypeScript</Badge>
+                <Badge variant={"secondary"}>Tailwind CSS</Badge>
+                <Badge variant={"secondary"}>HTML/CSS</Badge>
+                <Badge variant={"secondary"}>Angular</Badge>
+                <Badge variant={"secondary"}>JQuery</Badge>
+                <Badge variant={"secondary"}>BootStrap</Badge>
+                <Badge variant={"secondary"}>Shadcn</Badge>
+                <Badge variant={"secondary"}>JavaScript</Badge>
+                <Badge variant={"secondary"}>Redux</Badge>
               </div>
             </CardContent>
           </Card>
@@ -61,12 +61,12 @@ export default function SkillsSection() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                <Badge>Node.js</Badge>
-                <Badge>Express</Badge>
-                <Badge>Python</Badge>
-                <Badge>REST APIs</Badge>
-                <Badge>PostgreSQL</Badge>
-                <Badge>MySQL</Badge>
+                <Badge variant={"secondary"}>Node.js</Badge>
+                <Badge variant={"secondary"}>Express</Badge>
+                <Badge variant={"secondary"}>Python</Badge>
+                <Badge variant={"secondary"}>REST APIs</Badge>
+                <Badge variant={"secondary"}>PostgreSQL</Badge>
+                <Badge variant={"secondary"}>MySQL</Badge>
               </div>
             </CardContent>
           </Card>
@@ -77,14 +77,14 @@ export default function SkillsSection() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                <Badge>C++</Badge>
-                <Badge>Python</Badge>
-                <Badge>DSA</Badge>
-                <Badge>Git</Badge>
+                <Badge variant={"secondary"}>C++</Badge>
+                <Badge variant={"secondary"}>Python</Badge>
+                <Badge variant={"secondary"}>DSA</Badge>
+                <Badge variant={"secondary"}>Git</Badge>
                 {/* <Badge>GitHub Actions</Badge>
                 <Badge>Docker</Badge> */}
-                <Badge>AWS Solutions Architect</Badge>
-                <Badge>Vercel</Badge>
+                <Badge variant={"secondary"}>AWS Solutions Architect</Badge>
+                <Badge variant={"secondary"}>Vercel</Badge>
                 {/* <Badge>CI/CD</Badge>
                 <Badge>Jest</Badge>
                 <Badge>Cypress</Badge> */}

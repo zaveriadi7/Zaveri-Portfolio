@@ -24,7 +24,7 @@ export default function HeroSection() {
                   />{" "}
                 </span>
               </h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 font-merriweather lg:text-[18px]">
                 I build beautiful, performant, and user-friendly web
                 applications with modern technologies.
               </p>
