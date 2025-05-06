@@ -24,18 +24,19 @@ export default function ProjectsSection() {
               <span className="text-4xl">🚀</span>
             </div>
             <CardHeader>
-              <CardTitle>E-Commerce Platform</CardTitle>
-              <CardDescription>A full-featured online shopping experience</CardDescription>
+              <CardTitle>VakeelSaabOnline</CardTitle>
+              <CardDescription>An online platform for free consultation with experienced lawyers</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Built with Next.js, TypeScript, and Stripe. Features include user authentication, product catalog,
-                shopping cart, and secure checkout.
+                Built with NodeJs, Express, EJS, CSS, PostgreSQL. Features include user authentication, lawyer registration and a backend to handle scheduling of clients with lawyers.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="ghost" className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400">
+                <a href="https://github.com/zaveriadi7/vakeelsaab">
                 View Project
+                </a>
                 <ArrowUpRight className="h-4 w-4" />
               </Button>
             </CardFooter>
