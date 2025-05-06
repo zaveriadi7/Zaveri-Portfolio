@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
-
+import vakeelsaab from "../public/vakeelsaab.png"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -19,9 +19,8 @@ export default function ProjectsSection() {
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
           <Card className="overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
-              {/* Replace with actual project image */}
-              <span className="text-4xl">🚀</span>
+            <div className="h-55 object-contain">
+        <img src="/vakeelsaab.png" alt="Vakeel Saab Logo" className="h-55"/>
             </div>
             <CardHeader>
               <CardTitle>VakeelSaabOnline</CardTitle>
@@ -42,19 +41,16 @@ export default function ProjectsSection() {
             </CardFooter>
           </Card>
           <Card className="overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
-              {/* Replace with actual project image */}
-              <span className="text-4xl">📊</span>
+          <div className="h-55 object-contain">
+        <img src="/chefclaude.png" alt="Vakeel Saab Logo" className="h-55"/>
             </div>
             <CardHeader>
-              <CardTitle>Analytics Dashboard</CardTitle>
-              <CardDescription>Data visualization for business insights</CardDescription>
+              <CardTitle>ChefClaude</CardTitle>
+              <CardDescription>AI-powered recipe generator</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                React-based dashboard with real-time data updates, interactive charts, and customizable widgets.
-                Includes user role management.
-              </p>
+                Built with React, Node.js, and Anthropic API. Users can input ingredients and dietary preferences to generate personalized recipes.Implemented Lazy loading for smooth user experience.</p>
             </CardContent>
             <CardFooter>
               <Button variant="ghost" className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400">
@@ -64,35 +60,33 @@ export default function ProjectsSection() {
             </CardFooter>
           </Card>
           <Card className="overflow-hidden">
-            <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 flex items-center justify-center">
-              {/* Replace with actual project image */}
-              <span className="text-4xl">💬</span>
+          <div className="h-55 object-contain">
+        <img src="/tasknest.png" alt="Vakeel Saab Logo" className="h-55"/>
             </div>
             <CardHeader>
-              <CardTitle>Chat Application</CardTitle>
-              <CardDescription>Real-time messaging platform</CardDescription>
+              <CardTitle>TaskNest</CardTitle>
+              <CardDescription>Task management app with reminders and sharing features</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Built with Socket.io, React, and Node.js. Features include real-time messaging, file sharing, and user
-                presence indicators.
+                Built with React, Node.js, Express,CSS, PostgreSQL. Features include user authentication, task management, and a backend to handle notifications. Users can create, update, and delete tasks, set tags, receive reminders,upload files and have reminders on gmail.
               </p>
             </CardContent>
             <CardFooter>
               <Button variant="ghost" className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400">
-                View Project
+                <a href="https://github.com/zaveriadi7/Tasknest">View Project</a>
                 <ArrowUpRight className="h-4 w-4" />
               </Button>
             </CardFooter>
           </Card>
         </div>
         <div className="flex justify-center">
-          <Link href="/projects">
+          
             <Button variant="outline" className="gap-1.5 group">
-              View All Projects
+              <a href="https://github.com/zaveriadi7/">View All Projects</a>
+              
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Button>
-          </Link>
         </div>
       </div>
     </section>
