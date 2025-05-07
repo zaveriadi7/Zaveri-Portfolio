@@ -40,15 +40,15 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>Worked with 5+ Projects</span>
+                <span>Full Stack Projects</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>Delivered every Project on Time</span>
+                <span>Deployment and Hosting on AWS</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-gray-500" />
-                <span>Delivered every Project on Time</span>
+                <span>Learning with @Classplus</span>
               </li>
             </ul>
           </div>
