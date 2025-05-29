@@ -8,9 +8,26 @@ const merriweather = Merriweather({
   variable: '--font-merriweather',
 })
 
-export const metadata: Metadata = {
-  title: 'Aditya Zaveri',
+export const metadata = {
+  title: 'Aditya Zaveri | Full Stack Developer',
+  description: 'Portfolio of Aditya Zaveri — showcasing projects, skills, and experience.',
+  openGraph: {
+    title: 'Aditya Zaveri | Full Stack Developer',
+    description: 'Portfolio of Aditya Zaveri — showcasing projects, skills, and experience.',
+    url: 'https://zaveriadi7.github.io/hello/',
+    siteName: 'Aditya Zaveri Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Aditya Zaveri Portfolio'
+      }
+    ],
+    type: 'website'
+  },
 }
+
 
 export default function RootLayout({
   children,
@@ -19,6 +36,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en"  className={merriweather.variable}>
+      <head>
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Aditya Zaveri',
+              url: 'https://adityazaveri.vercel.app',
+              sameAs: [
+                'https://www.linkedin.com/in/aditya-zaveri/',
+                'https://github.com/zaveriadi7'
+              ],
+              jobTitle: 'Software Developer',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Classplus'
+              }
+            })
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   )
