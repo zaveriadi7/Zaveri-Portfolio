@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import nptel from "../../public/nptel.png"
 const certifications = [
   {
     id: 1,
@@ -12,7 +12,7 @@ const certifications = [
   {
     id: 2,
     title: "Cloud Computing - IIT Kharagpur",
-    image: "https://media.licdn.com/dms/image/v2/D562DAQFoGF7dC7izVQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1718168361896?e=1747026000&v=beta&t=JhWwPQpo-nncIawLRYUOlYP56btgA_w8sHk8gr8tfNo",
+    image: "/nptel.png",
     description:
       "Issued by NPTEL. Scored 72% receiving elite badge.",
     href:"https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS17S45290199230380511"
@@ -20,7 +20,7 @@ const certifications = [
   {
     id: 3,
     title: "Introduction to Frontend Development by Meta",
-    image: "https://media.licdn.com/dms/image/v2/D562DAQFsw1JYcznB3Q/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1719388676906?e=1747026000&v=beta&t=C_QvQfOCHhzensR3XddKE1GAV3YtQfkghd02BxdgI0Y",
+    image: "/meta.png",
     description:
       "Issued by Coursera in June 2024.",
       href:"https://www.coursera.org/account/accomplishments/verify/86XDN65GSLXZ"
@@ -28,7 +28,7 @@ const certifications = [
   {
     id: 4,
     title: "Applied Machine Learning in Python by University of Michigan",
-    image: "https://media.licdn.com/dms/image/v2/D562DAQE0j7EGAmgujA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1718168017247?e=1747026000&v=beta&t=wYrFbSfWodlSwrAI4_stY-DT6-62ZaCTaf7mpX15M-4",
+    image: "ml.png",
     description:
       "Issued by Coursera in February 2023.",
       href:"https://www.coursera.org/account/accomplishments/verify/SKYTT8J4249A?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course"
@@ -93,8 +93,7 @@ export default function Certifications() {
             <img
               src={cert.image}
               alt={cert.title}
-              className="w-full h-40 object-contain"
-              
+              className="w-full h-40 object-contain" 
             />
             </a>
             <div className="p-2 text-center">

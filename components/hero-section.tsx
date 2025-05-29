@@ -26,8 +26,7 @@ export default function HeroSection() {
                   </span>
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 font-merriweather lg:text-[18px]">
-                  I build beautiful, performant, and user-friendly web
-                  applications with modern technologies.
+                 Creating fast, beautiful, and user-friendly web apps with today’s tech — and tomorrow’s thinking.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -82,13 +81,13 @@ export default function HeroSection() {
                 {[
                   "Backend Developer",
                   "Cloud Solutions",
-                  "Coffee Person",
+                  "Caffeine-Fueled Coder",
                   "Frontend Developer",
-                  "UI/UX Advocate",
+                  "Database Architect",
                   "Agile Developer",
                 ].map((text, index, arr) => {
                   const angle = (360 / arr.length) * index;
-                  const radius = 200; // Reduced radius to accommodate text
+                  const radius = 200; 
                   const x = Math.cos((angle * Math.PI) / 180) * radius;
                   const y = Math.sin((angle * Math.PI) / 180) * radius;
 

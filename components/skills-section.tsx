@@ -46,11 +46,10 @@ export default function SkillsSection() {
                 <Badge variant={"secondary"}>Tailwind CSS</Badge>
                 <Badge variant={"secondary"}>HTML/CSS</Badge>
                 <Badge variant={"secondary"}>Angular</Badge>
-                <Badge variant={"secondary"}>JQuery</Badge>
                 <Badge variant={"secondary"}>BootStrap</Badge>
                 <Badge variant={"secondary"}>Shadcn</Badge>
                 <Badge variant={"secondary"}>JavaScript</Badge>
-                <Badge variant={"secondary"}>Redux</Badge>
+                {/* <Badge variant={"secondary"}>Redux</Badge> */}
               </div>
             </CardContent>
           </Card>
@@ -63,7 +62,6 @@ export default function SkillsSection() {
               <div className="flex flex-wrap gap-2">
                 <Badge variant={"secondary"}>Node.js</Badge>
                 <Badge variant={"secondary"}>Express</Badge>
-                <Badge variant={"secondary"}>Python</Badge>
                 <Badge variant={"secondary"}>REST APIs</Badge>
                 <Badge variant={"secondary"}>PostgreSQL</Badge>
                 <Badge variant={"secondary"}>MySQL</Badge>
