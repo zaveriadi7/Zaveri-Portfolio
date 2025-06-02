@@ -9,7 +9,10 @@ import ProfileCard from "./ui/ProfileCard";
 export default function HeroSection() {
   return (
     <>
-      <section id="hero" className="w-full  2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 container">
+      <section
+        id="hero"
+        className="w-full  2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 container"
+      >
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
             <div className="flex flex-col justify-center space-y-4 sm:ml-[150px] sm:pr-20">
@@ -27,7 +30,8 @@ export default function HeroSection() {
                   </span>
                 </h1>
                 <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400 font-merriweather lg:text-[18px]">
-                 Creating fast, beautiful, and user-friendly web apps with today’s tech — and tomorrow’s thinking.
+                  Creating fast, beautiful, and user-friendly web apps with
+                  today’s tech — and tomorrow’s thinking.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -68,24 +72,24 @@ export default function HeroSection() {
                 </a>
               </div>
               <div className="mx-10 sm:hidden">
-              <ProfileCard
-  name="Aditya Zaveri"
-  title="Software Engineer"
-  handle="aditya_zaveri"
-  status="Online"
-  contactText="Contact Me"
-  avatarUrl="/adityazaveri.png"
-  showUserInfo={true}
-  enableTilt={true}
-  onContactClick={() => console.log('Contact clicked')}
-/>
-</div>
+                <ProfileCard
+                  name="Aditya Zaveri"
+                  title="Software Engineer"
+                  handle="aditya_zaveri"
+                  status="Online"
+                  contactText="Contact Me"
+                  avatarUrl="/adityazaveri.png"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  onContactClick={() => console.log("Contact clicked")}
+                />
+              </div>
             </div>
-            
+
             {/* Rotating Circle Component */}
-           
+
             <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-gray-800 ml-auto mr-0">
-            {/* Central emoji */}
+              {/* Central emoji */}
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-full">
                 <span className="text-6xl">👨‍💻</span>
               </div>
@@ -101,7 +105,7 @@ export default function HeroSection() {
                   "Agile Developer",
                 ].map((text, index, arr) => {
                   const angle = (360 / arr.length) * index;
-                  const radius = 200; 
+                  const radius = 200;
                   const x = Math.cos((angle * Math.PI) / 180) * radius;
                   const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -112,7 +116,9 @@ export default function HeroSection() {
                       style={{
                         left: `calc(50% + ${x}px)`,
                         top: `calc(50% + ${y}px)`,
-                        transform: `translate(-50%, -50%) rotate(${angle + 90}deg)`,
+                        transform: `translate(-50%, -50%) rotate(${
+                          angle + 90
+                        }deg)`,
                         zIndex: 50,
                       }}
                     >

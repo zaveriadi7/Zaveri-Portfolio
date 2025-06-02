@@ -20,8 +20,8 @@ export default function AboutSection() {
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather">
               I'm a full stack developer with a curious mind and a builder's
               heart. I enjoy turning ideas into real, usable web applications
-              that are clean, fast, and user-friendly.  I’m driven by the process of creating things that
-              make a difference.
+              that are clean, fast, and user-friendly. I’m driven by the process
+              of creating things that make a difference.
             </p>
           </div>
         </div>
@@ -57,9 +57,7 @@ export default function AboutSection() {
               </li>
               <li className="flex items-center gap-2 text-sm md:text-base">
                 <CheckCircle className="h-4 w-4 text-gray-600" />
-                <span>
-                  Making my mark at @Classplus and @Testbook
-                </span>
+                <span>Making my mark at @Classplus and @Testbook</span>
               </li>
             </ul>
           </div>
@@ -224,7 +222,7 @@ export default function AboutSection() {
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
-Debugging & Maintenance
+                      Debugging & Maintenance
                     </h3>
                     <p>
                       {/* Regularly identified and resolved bugs across large
@@ -258,18 +256,14 @@ Debugging & Maintenance
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
                       State & Data Handling
                     </h4>
-                    <p>
-                      React Context API, Hooks, REST APIs
-                    </p>
+                    <p>React Context API, Hooks, REST APIs</p>
                   </div>
 
                   <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
                       Build Tools & DevOps
                     </h4>
-                    <p>
-                      Git, GitHub, Lighthouse, ESLint, Prettier
-                    </p>
+                    <p>Git, GitHub, Lighthouse, ESLint, Prettier</p>
                   </div>
 
                   {/* <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
