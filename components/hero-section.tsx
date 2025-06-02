@@ -4,6 +4,7 @@ import Link from "next/link";
 import BlurText from "./ui/blurtext";
 import { Button } from "@/components/ui/button";
 import LogoCarousel from "../components/ui/infiniteScroller";
+import ProfileCard from "./ui/ProfileCard";
 
 export default function HeroSection() {
   return (
@@ -66,8 +67,21 @@ export default function HeroSection() {
                   </Button>
                 </a>
               </div>
+              <div className="mx-10 sm:hidden">
+              <ProfileCard
+  name="Aditya Zaveri"
+  title="Software Engineer"
+  handle="aditya_zaveri"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl="/adityazaveri.png"
+  showUserInfo={true}
+  enableTilt={true}
+  onContactClick={() => console.log('Contact clicked')}
+/>
+</div>
             </div>
-
+            
             {/* Rotating Circle Component */}
            
             <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-gray-800 ml-auto mr-0">
