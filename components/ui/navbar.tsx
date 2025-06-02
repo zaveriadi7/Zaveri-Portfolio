@@ -109,8 +109,8 @@ export default function Navbar() {
                 offset={-70}
                 duration={500}
                 spy={true}
-                activeClass="text-gray-950 font-semibold  border-b-2 border-gray-950"
-                className="text-sm font-meriweather font-thin text-gray-600 hover:text-gray-400 dark:hover:text-gray-100 transition-colors px-3 py-1 cursor-pointer"
+                activeClass="text-blue-500 dark:text-blue-400 font-semibold border-b-2 border-blue-500"
+                className="text-sm font-mono font-thin hover:text-blue-500 dark:hover:text-gray-100 transition-colors px-3 py-1 cursor-pointer"
               >
                 {item.name}
               </ScrollLink>
