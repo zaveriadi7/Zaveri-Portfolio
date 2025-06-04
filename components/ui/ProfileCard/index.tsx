@@ -255,8 +255,14 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   );
 
   const handleContactClick = useCallback(() => {
-    onContactClick?.();
-  }, [onContactClick]);
+  onContactClick?.();
+
+  const contactSection = document.getElementById('contact_me');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [onContactClick]);
+
 
   return (
     <div
