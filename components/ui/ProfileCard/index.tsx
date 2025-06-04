@@ -53,7 +53,7 @@ const easeInOutCubic = (x: number): number =>
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   avatarUrl = "<Placeholder for avatar URL>",
-  iconUrl = "<Placeholder for icon URL>",
+  iconUrl = "https://www.reactbits.dev/assets/iconpattern.png",
   grainUrl = "<Placeholder for grain URL>",
   behindGradient,
   innerGradient,
