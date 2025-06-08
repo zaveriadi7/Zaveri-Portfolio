@@ -11,7 +11,7 @@ export default function HeroSection() {
     <>
       <section
         id="hero"
-        className="w-full  2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 container"
+        className="w-full  2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-white dark:from-gray-950 dark:to-gray-900 container"
       >
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
