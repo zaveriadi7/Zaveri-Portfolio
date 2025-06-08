@@ -11,7 +11,7 @@ export default function HeroSection() {
     <>
       <section
         id="hero"
-        className="w-full 2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-white dark:bg-gray-950 container"
+        className="w-full 2xl:max-w-5xl 2xl:mx-[275px] py-12 md:py-24 lg:py-36 xl:pt-[200px] bg-white dark:bg-black/20"
       >
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
@@ -87,9 +87,9 @@ export default function HeroSection() {
             </div>
 
             {/* Rotating Circle Component */}
-            <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-gray-100 shadow-xl dark:border-gray-800 ml-auto mr-0">
+            <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-gray-400 ml-auto mr-0">
               {/* Central emoji */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-full">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 rounded-full">
                 <span className="text-6xl">👨‍💻</span>
               </div>
 

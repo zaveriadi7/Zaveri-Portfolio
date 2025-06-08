@@ -1,70 +1,72 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
-import { Menu, Moon, Sun } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { Link as ScrollLink } from "react-scroll" // react-scroll for smooth scroll + active section
-import { useTheme } from "next-themes"
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { Menu, Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Link as ScrollLink } from "react-scroll"; // react-scroll for smooth scroll + active section
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
-  const [scrollY, setScrollY] = useState(0)
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null)
-  const [isCompact, setIsCompact] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
+    null
+  );
+  const [isCompact, setIsCompact] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const lastScrollY = useRef(0)
-  const animationFrameRef = useRef<number | null>(null)
-  const navRef = useRef<HTMLDivElement>(null)
+  const lastScrollY = useRef(0);
+  const animationFrameRef = useRef<number | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   // Ensure theme toggle is only rendered after mount to avoid hydration mismatch
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   // Scroll handling
   const handleScroll = () => {
     if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current)
+      cancelAnimationFrame(animationFrameRef.current);
     }
 
     animationFrameRef.current = requestAnimationFrame(() => {
-      const currentScrollY = window.scrollY
-      const direction = currentScrollY > lastScrollY.current ? "down" : "up"
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY.current ? "down" : "up";
 
-      setScrollDirection(direction)
-      setScrollY(currentScrollY)
-      setIsCompact(currentScrollY > 50)
+      setScrollDirection(direction);
+      setScrollY(currentScrollY);
+      setIsCompact(currentScrollY > 50);
 
-      lastScrollY.current = currentScrollY
-    })
-  }
+      lastScrollY.current = currentScrollY;
+    });
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", handleScroll);
       if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
+        cancelAnimationFrame(animationFrameRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   const calculateNavbarWidth = () => {
-    const baseWidth = 80 // initial width in vw
-    const minWidth = 40  // minimum width in vw
-    const maxScroll = 1000 // max scroll value before hitting min width
+    const baseWidth = 80; // initial width in vw
+    const minWidth = 40; // minimum width in vw
+    const maxScroll = 1000; // max scroll value before hitting min width
 
-    const scrollFactor = Math.min(scrollY / maxScroll, 1)
+    const scrollFactor = Math.min(scrollY / maxScroll, 1);
 
-    return baseWidth - scrollFactor * (baseWidth - minWidth)
-  }
+    return baseWidth - scrollFactor * (baseWidth - minWidth);
+  };
 
-  const navbarWidth = calculateNavbarWidth()
+  const navbarWidth = calculateNavbarWidth();
 
   const navItems = [
     { name: "Home", href: "#hero" },
@@ -72,9 +74,9 @@ export default function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact_me" },
-  ]
+  ];
 
-  const shouldShowName = scrollDirection !== "down" && !isCompact
+  const shouldShowName = scrollDirection !== "down" && !isCompact;
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center hidden lg:block">
@@ -84,8 +86,8 @@ export default function Navbar() {
           "rounded-full transition-all duration-500 ease-in-out",
           "transition-[width] delay-100",
           isCompact
-            ? "py-2 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm shadow-md"
-            : "py-3 bg-white dark:bg-gray-950 shadow-lg"
+            ? "py-2 bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-md"
+            : "py-3 bg-white dark:bg-black shadow-lg"
         )}
         style={{
           width: `${navbarWidth}vw`,
@@ -160,7 +162,7 @@ export default function Navbar() {
 
       {/* Mobile navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-950 rounded-lg shadow-md py-4 w-48 transition-colors duration-300">
+        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-black rounded-lg shadow-md py-4 w-48 transition-colors duration-300">
           <nav className="flex flex-col space-y-2 px-4">
             {navItems.map((item) => (
               <ScrollLink
@@ -182,8 +184,8 @@ export default function Navbar() {
               className="flex items-center space-x-2 text-sm font-medium hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 py-1 cursor-pointer"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >
-              {mounted && (
-                theme === "light" ? (
+              {mounted &&
+                (theme === "light" ? (
                   <>
                     <Moon className="h-4 w-4 transition-transform duration-300" />
                     <span>Dark Mode</span>
@@ -193,12 +195,11 @@ export default function Navbar() {
                     <Sun className="h-4 w-4 transition-transform duration-300" />
                     <span>Light Mode</span>
                   </>
-                )
-              )}
+                ))}
             </button>
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }

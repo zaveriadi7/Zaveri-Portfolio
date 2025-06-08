@@ -17,7 +17,7 @@ export default function SkillsSection() {
     <>
       <section
         id="skills"
-        className="w-full py-12 md:py-24 lg:py-20 bg-white dark:bg-gray-950"
+        className="w-full py-12 md:py-24 lg:py-20 bg-gray-50 dark:bg-black"
       >
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -58,9 +58,11 @@ export default function SkillsSection() {
           {/* Skill Cards */}
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3 font-merriweather">
             {/* Frontend Card */}
-            <Card className="dark:bg-gray-900 dark:border-gray-100">
+            <Card className="dark:bg-[#222831] dark:border-gray-900">
               <CardHeader>
-                <CardTitle className="dark:text-white">Frontend Development</CardTitle>
+                <CardTitle className="dark:text-white">
+                  Frontend Development
+                </CardTitle>
                 <CardDescription className="dark:text-gray-400">
                   Building beautiful, responsive user interfaces
                 </CardDescription>
@@ -90,9 +92,11 @@ export default function SkillsSection() {
             </Card>
 
             {/* Backend Card */}
-            <Card className="dark:bg-gray-900 dark:border-gray-800">
+            <Card className="dark:bg-[#222831] dark:border-gray-800">
               <CardHeader>
-                <CardTitle className="dark:text-white">Backend Development</CardTitle>
+                <CardTitle className="dark:text-white">
+                  Backend Development
+                </CardTitle>
                 <CardDescription className="dark:text-gray-400">
                   Creating robust, scalable server applications
                 </CardDescription>
@@ -113,9 +117,11 @@ export default function SkillsSection() {
             </Card>
 
             {/* Core Tools Card */}
-            <Card className="dark:bg-gray-900 dark:border-gray-800">
+            <Card className="dark:bg-[#222831] dark:border-gray-800">
               <CardHeader>
-                <CardTitle className="dark:text-white">Core Languages & Tools</CardTitle>
+                <CardTitle className="dark:text-white">
+                  Core Languages & Tools
+                </CardTitle>
                 <CardDescription className="dark:text-gray-400">
                   Streamlining development and deployment
                 </CardDescription>
@@ -139,10 +145,7 @@ export default function SkillsSection() {
       </section>
 
       {/* Certifications Section */}
-      <section
-        id="Certifications"
-        className="w-full bg-white dark:bg-gray-950"
-      >
+      <section id="Certifications" className="w-full bg-white dark:bg-black pt-8">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">

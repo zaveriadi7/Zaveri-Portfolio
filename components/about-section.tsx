@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950"
+      className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-black"
     >
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -100,7 +100,7 @@ export default function AboutSection() {
       </div>
 
       {/* Work Experience Section */}
-      <section className="w-full py-12 md:py-24 lg:py-2 bg-white dark:bg-gray-950">
+      <section className="w-full py-12 md:py-24 lg:py-2 bg-white dark:bg-black">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2" id="workex">
@@ -140,7 +140,7 @@ export default function AboutSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                   {/* <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Modern Front-End Architecture
                     </h3>
                     <p>
@@ -151,7 +151,7 @@ export default function AboutSection() {
                   </div> */}
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Next.js Migration at Classplus from Angular
                     </h3>
                     <p>
@@ -164,7 +164,7 @@ export default function AboutSection() {
                   </div>
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Dynamic Component Development
                     </h3>
                     <p>
@@ -176,7 +176,7 @@ export default function AboutSection() {
                   </div>
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Performance & Optimization
                     </h3>
                     <p>
@@ -187,7 +187,7 @@ export default function AboutSection() {
                   </div>
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Real-Time Data Integration
                     </h3>
                     <p>
@@ -198,7 +198,7 @@ export default function AboutSection() {
                   </div>
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Design Systems & UI Libraries
                     </h3>
                     <p>
@@ -209,7 +209,7 @@ export default function AboutSection() {
                   </div>
 
                   {/* <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Cross-Team Collaboration
                     </h3>
                     <p>
@@ -221,7 +221,7 @@ export default function AboutSection() {
                   </div> */}
 
                   <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-400">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200">
                       Debugging & Maintenance
                     </h3>
                     <p>
@@ -239,35 +239,35 @@ export default function AboutSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                   <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
+                    <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Frameworks
                     </h4>
                     <p>React.js, Next.js, Angular, TypeScript</p>
                   </div>
 
                   <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
+                    <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Styling & Animation
                     </h4>
                     <p>Tailwind CSS, ShadCN UI, Framer Motion</p>
                   </div>
 
                   <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
+                    <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       State & Data Handling
                     </h4>
                     <p>React Context API, Hooks, REST APIs</p>
                   </div>
 
                   <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
+                    <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Build Tools & DevOps
                     </h4>
                     <p>Git, GitHub, Lighthouse, ESLint, Prettier</p>
                   </div>
 
                   {/* <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                    <h4 className="font-semibold text-gray-600 dark:text-indigo-400 mb-2">
+                    <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Project Management
                     </h4>
                     <p>Agile methodologies, Jira</p>
