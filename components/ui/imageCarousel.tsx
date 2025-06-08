@@ -33,7 +33,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <div className="pt-8 mt-10 bg-gradient-to-r from-black via-gray-700 to-black">
+    <div className="pt-8 mt-10 bg-gradient-to-r from-black via-gray-700 to-black dark:bg-black">
       <div className="flex overflow-x-auto scrollbar-hide  md:space-x-6 px-4 py-4 mx-0 md:mx-20">
         {certifications.map((cert) => (
           <div

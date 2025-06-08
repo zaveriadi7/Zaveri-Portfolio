@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Merriweather } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -35,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en"  className={merriweather.variable}>
+    <html lang="en" suppressHydrationWarning className={merriweather.variable}>
       <head>
         {/* <link rel="icon" href="/favicon.ico" /> */}
 
@@ -61,7 +63,19 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeToggle />
+          </div>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

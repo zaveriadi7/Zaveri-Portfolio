@@ -2,20 +2,28 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Link as ScrollLink } from "react-scroll" // react-scroll for smooth scroll + active section
+import { useTheme } from "next-themes"
 
 export default function Navbar() {
   const [scrollY, setScrollY] = useState(0)
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null)
   const [isCompact, setIsCompact] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
   const lastScrollY = useRef(0)
   const animationFrameRef = useRef<number | null>(null)
   const navRef = useRef<HTMLDivElement>(null)
+
+  // Ensure theme toggle is only rendered after mount to avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Scroll handling
   const handleScroll = () => {
@@ -117,6 +125,24 @@ export default function Navbar() {
             ))}
           </nav>
 
+          {/* Theme Toggle */}
+          <div className="absolute right-6">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {mounted && (
+                <>
+                  <Sun className="h-5 w-5 rotate-0 scale-100 transition-transform duration-300 dark:-rotate-90 dark:scale-0 text-gray-700 dark:text-gray-300" />
+                  <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-transform duration-300 dark:rotate-0 dark:scale-100 text-gray-700 dark:text-gray-300" />
+                </>
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+          </div>
+
           {/* Mobile menu button (hidden on desktop) */}
           <div className="md:hidden absolute right-0">
             <Button
@@ -134,7 +160,7 @@ export default function Navbar() {
 
       {/* Mobile navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-950 rounded-lg shadow-md py-4 w-48">
+        <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-950 rounded-lg shadow-md py-4 w-48 transition-colors duration-300">
           <nav className="flex flex-col space-y-2 px-4">
             {navItems.map((item) => (
               <ScrollLink
@@ -146,11 +172,30 @@ export default function Navbar() {
                 spy={true}
                 activeClass="text-blue-600 dark:text-blue-400 font-semibold"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-sm font-medium hover:text-gray-900 dark:hover:text-gray-100 transition-colors py-1 cursor-pointer"
+                className="text-sm font-medium hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 py-1 cursor-pointer"
               >
                 {item.name}
               </ScrollLink>
             ))}
+            {/* Theme Toggle for Mobile */}
+            <button
+              className="flex items-center space-x-2 text-sm font-medium hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 py-1 cursor-pointer"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {mounted && (
+                theme === "light" ? (
+                  <>
+                    <Moon className="h-4 w-4 transition-transform duration-300" />
+                    <span>Dark Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun className="h-4 w-4 transition-transform duration-300" />
+                    <span>Light Mode</span>
+                  </>
+                )
+              )}
+            </button>
           </nav>
         </div>
       )}
