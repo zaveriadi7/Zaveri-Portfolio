@@ -12,22 +12,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import GlowingSymbols from "./ui/GlowingSymbols";
 
 export default function ProjectsSection() {
-  // Path animation variants
-  const pathVariants = {
-    initial: { pathLength: 0, opacity: 0 },
-    animate: (i: number) => ({
-      pathLength: 1,
-      opacity: [0.2, 0.4, 0.2],
-      transition: {
-        pathLength: { duration: 2, ease: "easeInOut" },
-        opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-        delay: i * 0.2,
-      },
-    }),
-  };
-
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-black relative overflow-hidden">
       {/* Background glow effects */}
@@ -56,37 +43,8 @@ export default function ProjectsSection() {
         }}
       />
 
-      {/* Animated background paths */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
-          {[...Array(3)].map((_, i) => (
-            <motion.path
-              key={i}
-              d={`M${i * 30},${20 + i * 10} Q${50 + i * 10},${40 + i * 10} ${100 - i * 30},${20 + i * 10}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.3"
-              custom={i}
-              variants={pathVariants}
-              initial="initial"
-              animate="animate"
-            />
-          ))}
-          {[...Array(2)].map((_, i) => (
-            <motion.path
-              key={`circle-${i}`}
-              d={`M${50 + Math.cos(i * Math.PI) * 30},${50 + Math.sin(i * Math.PI) * 30} A30,30 0 0,1 ${50 + Math.cos((i+1) * Math.PI) * 30},${50 + Math.sin((i+1) * Math.PI) * 30}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.3"
-              custom={i}
-              variants={pathVariants}
-              initial="initial"
-              animate="animate"
-            />
-          ))}
-        </svg>
-      </div>
+      {/* Glowing dev symbols */}
+      <GlowingSymbols count={6} size="lg" className="z-0" />
 
       <motion.div 
         id="projects" 

@@ -4,86 +4,71 @@ import SplitText from "./ui/splittext";
 import ShinyText from "./ui/ShinyText";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, hoverScale } from "@/lib/animations";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import GlowingSymbols from "@/components/ui/GlowingSymbols";
+
+interface PersonalInfo {
+  label: string;
+  value: string;
+}
+
+interface JourneyItem {
+  title: string;
+  period: string;
+  description: string;
+}
+
+const personalInfo: PersonalInfo[] = [
+  { label: "Name", value: "Rahul Zaveri" },
+  { label: "Location", value: "Mumbai, India" },
+  { label: "Education", value: "B.Tech CSE @ VIT" },
+  { label: "Experience", value: "2+ years" },
+  { label: "Email", value: "rahulzaveri2003@gmail.com" },
+];
+
+const journey: JourneyItem[] = [
+  {
+    title: "Started Programming",
+    period: "2020",
+    description: "Began my journey with Python and C++",
+  },
+  {
+    title: "First Internship",
+    period: "2021",
+    description: "Joined Polaris as a Frontend Developer",
+  },
+  {
+    title: "Classplus",
+    period: "2022",
+    description: "Worked on Next.js migration and component development",
+  },
+  {
+    title: "Testbook",
+    period: "2023",
+    description: "Built high-impact web applications for edtech platform",
+  },
+];
+
+const interests: string[] = [
+  "Web Development",
+  "Open Source",
+  "UI/UX Design",
+  "Cloud Computing",
+  "DevOps",
+  "Problem Solving",
+  "Reading",
+  "Music",
+];
 
 export default function AboutSection() {
-  // Path animation variants
-  const pathVariants = {
-    initial: { pathLength: 0, opacity: 0 },
-    animate: (i: number) => ({
-      pathLength: 1,
-      opacity: [0.2, 0.4, 0.2],
-      transition: {
-        pathLength: { duration: 2, ease: "easeInOut" },
-        opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-        delay: i * 0.2,
-      },
-    }),
-  };
-
   return (
     <section
       id="about"
       className="w-full py-12 md:py-24 lg:pt-20 bg-white dark:bg-black relative overflow-hidden"
     >
-      {/* Background glow effects */}
-      <motion.div
-        className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-pink-500/10 to-orange-500/10 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Animated background paths */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
-          {[...Array(3)].map((_, i) => (
-            <motion.path
-              key={i}
-              d={`M${i * 30},${20 + i * 10} Q${50 + i * 10},${40 + i * 10} ${100 - i * 30},${20 + i * 10}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.3"
-              custom={i}
-              variants={pathVariants}
-              initial="initial"
-              animate="animate"
-            />
-          ))}
-          {[...Array(2)].map((_, i) => (
-            <motion.path
-              key={`circle-${i}`}
-              d={`M${50 + Math.cos(i * Math.PI) * 30},${50 + Math.sin(i * Math.PI) * 30} A30,30 0 0,1 ${50 + Math.cos((i+1) * Math.PI) * 30},${50 + Math.sin((i+1) * Math.PI) * 30}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.3"
-              custom={i}
-              variants={pathVariants}
-              initial="initial"
-              animate="animate"
-            />
-          ))}
-        </svg>
-      </div>
-
+      <GlowingSymbols count={6} size="lg" className="z-0" />
       <motion.div 
         className="container px-4 md:px-6 mx-auto relative z-10"
         initial="hidden"
@@ -283,20 +268,6 @@ export default function AboutSection() {
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        {/* Background glow effects */}
-        <motion.div
-          className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
         <motion.div 
           className="container px-4 md:px-6 mx-auto relative z-10"
           variants={fadeIn}

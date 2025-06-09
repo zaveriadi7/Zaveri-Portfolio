@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, Github, Linkedin, Twitter, MailIcon } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Twitter, Mail as MailIcon } from "lucide-react";
 import Link from "next/link";
 import BlurText from "./ui/blurtext";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,7 @@ import LogoCarousel from "../components/ui/infiniteScroller";
 import ProfileCard from "./ui/ProfileCard";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { fadeIn, staggerContainer, hoverScale, slideIn } from "@/lib/animations";
+import GlowingSymbols from "./ui/GlowingSymbols";
 
 export default function HeroSection() {
   const { scrollYProgress } = useScroll();
@@ -112,161 +113,12 @@ export default function HeroSection() {
           className="absolute inset-0 pointer-events-none overflow-hidden"
           style={{ y: backgroundY }}
         >
-          {/* Animated background paths */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
-              {/* Corner paths */}
-              <motion.path
-                d="M0,20 Q20,0 40,20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={0}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M60,20 Q80,0 100,20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={1}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M0,80 Q20,100 40,80"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={2}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M60,80 Q80,100 100,80"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={3}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              {/* Edge paths */}
-              <motion.path
-                d="M10,40 Q0,50 10,60"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={4}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M90,40 Q100,50 90,60"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.3"
-                custom={5}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              {/* Wave paths */}
-              <motion.path
-                d="M20,10 C30,0 40,20 50,10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={6}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M50,10 C60,0 70,20 80,10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={7}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M20,90 C30,100 40,80 50,90"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={8}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M50,90 C60,100 70,80 80,90"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={9}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              {/* Diagonal paths */}
-              <motion.path
-                d="M0,30 L30,0"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={10}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M70,0 L100,30"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={11}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M0,70 L30,100"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={12}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-              <motion.path
-                d="M70,100 L100,70"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                custom={13}
-                variants={pathVariants}
-                initial="initial"
-                animate="animate"
-              />
-            </svg>
-          </div>
-
           {/* Dev symbols */}
           {codeSymbols.map((symbol, i) => (
             <motion.div
               key={i}
-              className="absolute text-3xl font-mono font-bold text-indigo-500/40 dark:text-indigo-400/40"
+              className={`absolute text-3xl font-mono font-bold text-indigo-500/40 dark:text-indigo-400/40
+                ${i >= 4 ? 'hidden md:block' : ''}`}
               style={{
                 left: `${10 + i * 12}%`,
                 top: `${10 + (i % 4) * 25}%`,
@@ -455,6 +307,7 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+                  <a href="#projects">
                   <Button className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300">
                     <motion.span
                       className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -465,6 +318,7 @@ export default function HeroSection() {
                     <span className="relative z-10">View Projects</span>
                     <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
                   </Button>
+                  </a>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
