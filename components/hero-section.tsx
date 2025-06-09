@@ -19,7 +19,7 @@ export default function HeroSection() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gray-900 dark:text-white">
                   I'm Aditya Zaveri.
-                  <span className="text-gray-500 dark:text-gray-300 block mt-2">
+                  <span className="text-gray-500 dark:text-indigo-300 block mt-2">
                     <BlurText
                       text="Full Stack Developer"
                       delay={150}
@@ -87,7 +87,7 @@ export default function HeroSection() {
             </div>
 
             {/* Rotating Circle Component */}
-            <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-gray-400 ml-auto mr-0">
+            <div className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-indigo-200 ml-auto mr-0">
               {/* Central emoji */}
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 rounded-full">
                 <span className="text-6xl">👨‍💻</span>

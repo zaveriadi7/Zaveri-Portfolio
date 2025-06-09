@@ -14,7 +14,7 @@ export default function AboutSection() {
             <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
               About Me
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200">
               My Journey
             </h2>
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather">
@@ -28,7 +28,9 @@ export default function AboutSection() {
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:gap-12 font-merriweather">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <h3 className="text-xl font-bold">My Background</h3>
+              <h3 className="text-xl font-bold dark:text-indigo-200">
+                My Background
+              </h3>
               <p className="text-gray-600 dark:text-gray-400 font-merriweather">
                 {/* My journey into tech began with a deep interest in how things
                 work and a drive to create solutions that are both useful and
@@ -63,7 +65,9 @@ export default function AboutSection() {
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <h3 className="text-xl font-bold">My Approach</h3>
+              <h3 className="text-xl font-bold dark:text-indigo-200">
+                My Approach
+              </h3>
               <p className="text-gray-600 dark:text-gray-400 font-merriweather">
                 {/* I focus on writing clean, scalable code and designing robust,
                 maintainable architectures. Performance and accessibility aren’t
@@ -107,7 +111,7 @@ export default function AboutSection() {
               <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 mb-10">
                 Work Experience
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200">
                 My Work Experience
               </h2>
             </div>
@@ -238,28 +242,28 @@ export default function AboutSection() {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-                  <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Frameworks
                     </h4>
                     <p>React.js, Next.js, Angular, TypeScript</p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Styling & Animation
                     </h4>
                     <p>Tailwind CSS, ShadCN UI, Framer Motion</p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       State & Data Handling
                     </h4>
                     <p>React Context API, Hooks, REST APIs</p>
                   </div>
 
-                  <div className="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                  <div className="bg-white dark:bg-gray-800 rounded-lg p-5 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                     <h4 className="font-semibold text-gray-600 dark:text-indigo-200 mb-2">
                       Build Tools & DevOps
                     </h4>
