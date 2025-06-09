@@ -86,8 +86,8 @@ export default function Navbar() {
           "rounded-full transition-all duration-500 ease-in-out",
           "transition-[width] delay-100",
           isCompact
-            ? "py-2 bg-white/90 dark:bg-black/90 backdrop-blur-sm shadow-md"
-            : "py-3 bg-white dark:bg-black shadow-lg"
+            ? "py-2 bg-white/90 dark:bg-black/90 border dark:border-gray-850  backdrop-blur-sm shadow-md"
+            : "py-3 bg-white dark:bg-black  dark:border-gray-900  shadow-lg"
         )}
         style={{
           width: `${navbarWidth}vw`,
@@ -203,3 +203,4 @@ export default function Navbar() {
     </header>
   );
 }
+
