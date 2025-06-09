@@ -46,7 +46,7 @@ export default function ProjectsSection() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
-            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
               <motion.div 
                 className="relative h-48 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -68,6 +68,7 @@ export default function ProjectsSection() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
+                    <a href="https://github.com/zaveriadi7/vakeelsaab">
                     <Button variant="secondary" size="sm" className="gap-2">
                       <motion.div
                         animate={{ rotate: [0, 360] }}
@@ -77,12 +78,13 @@ export default function ProjectsSection() {
                       </motion.div>
                       Code
                     </Button>
+                    </a>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button variant="secondary" size="sm" className="gap-2">
+                    {/* <Button variant="secondary" size="sm" className="gap-2">
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 1, repeat: Infinity }}
@@ -90,7 +92,7 @@ export default function ProjectsSection() {
                         <ExternalLink className="h-4 w-4" />
                       </motion.div>
                       Demo
-                    </Button>
+                    </Button> */}
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -105,7 +107,7 @@ export default function ProjectsSection() {
                   </CardDescription>
                 </motion.div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <motion.p 
                   className="text-sm text-gray-500 dark:text-gray-400 mb-4"
                   initial={{ opacity: 0 }}
@@ -159,7 +161,7 @@ export default function ProjectsSection() {
           </motion.div>
 
           <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
-            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
                 <img
                   src="/chefclaude.png"
@@ -171,17 +173,17 @@ export default function ProjectsSection() {
                     <Github className="h-4 w-4" />
                     Code
                   </Button>
-                  <Button variant="secondary" size="sm" className="gap-2">
+                  {/* <Button variant="secondary" size="sm" className="gap-2">
                     <ExternalLink className="h-4 w-4" />
                     Demo
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
               <CardHeader>
                 <CardTitle>ChefClaude</CardTitle>
                 <CardDescription>AI-powered recipe generator</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                   Built with React, Node.js, and Anthropic API. Users can input
                   ingredients and dietary preferences to generate personalized
@@ -207,7 +209,7 @@ export default function ProjectsSection() {
           </motion.div>
 
           <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
-            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
                 <img
                   src="/tasknest.png"
@@ -215,14 +217,16 @@ export default function ProjectsSection() {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href="https://github.com/zaveriadi7/Tasknest">
                   <Button variant="secondary" size="sm" className="gap-2">
                     <Github className="h-4 w-4" />
                     Code
                   </Button>
-                  <Button variant="secondary" size="sm" className="gap-2">
+                  </a>
+                  {/* <Button variant="secondary" size="sm" className="gap-2">
                     <ExternalLink className="h-4 w-4" />
                     Demo
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
               <CardHeader>
@@ -231,7 +235,7 @@ export default function ProjectsSection() {
                   Task management app with reminders and sharing features
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                   Built with React, Node.js, Express, CSS, PostgreSQL. Features
                   include user authentication, task management, and a backend to

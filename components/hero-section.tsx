@@ -62,7 +62,7 @@ export default function HeroSection() {
                 <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={{ scale: 0.95 }}>
                   <Button 
                     size="lg" 
-                    className="gap-1.5 group bg-gray-900 hover:bg-gray-800 dark:bg-indigo-300 dark:text-black dark:hover:bg-gray-700 text-white"
+                    className="gap-1.5 group bg-gray-900 hover:bg-gray-800 dark:bg-indigo-300 dark:text-black dark:hover:bg-gray-700 text-white w-full"
                   >
                     <a href="#projects">View My Work</a>
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -72,7 +72,7 @@ export default function HeroSection() {
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    className="border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    className="border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 w-full"
                   >
                     <a href="#workex">View Experience</a>
                   </Button>

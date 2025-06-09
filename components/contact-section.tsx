@@ -24,13 +24,13 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://linkedin.com/in/aditya-zaveri",
   },
-  {
-    name: "Twitter",
-    icon: Twitter,
-    href: "https://twitter.com/your-handle",
-  },
+  // {
+  //   name: "Twitter",
+  //   icon: Twitter,
+  //   href: "https://twitter.com/your-handle",
+  // },
 ];
 
 export default function ContactSection() {
