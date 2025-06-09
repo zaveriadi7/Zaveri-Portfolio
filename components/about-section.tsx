@@ -10,7 +10,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-black"
+      className="w-full py-12 md:py-24 lg:pt-20 bg-white dark:bg-black"
     >
       <motion.div 
         className="container px-4 md:px-6 mx-auto"

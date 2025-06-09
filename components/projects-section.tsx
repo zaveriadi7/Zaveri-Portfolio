@@ -15,7 +15,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-black">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-black">
       <motion.div 
         id="projects" 
         className="container px-4 md:px-6 mx-auto"

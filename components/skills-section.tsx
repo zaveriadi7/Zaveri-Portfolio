@@ -60,7 +60,7 @@ export default function SkillsSection() {
     <>
       <section
         id="skills"
-        className="w-full py-12 md:py-24 lg:py-20 bg-gray-50 dark:bg-black"
+        className="w-full py-12 md:py-24 lg:py-24 bg-gray-50 dark:bg-black"
       >
         <motion.div 
           className="container px-4 md:px-6 mx-auto"
