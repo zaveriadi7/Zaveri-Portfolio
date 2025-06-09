@@ -123,6 +123,7 @@ export default function Navbar() {
                 className="text-sm font-mono font-thin hover:text-blue-500 dark:hover:text-gray-100 transition-colors px-3 py-1 cursor-pointer"
               >
                 {item.name}
+                
               </ScrollLink>
             ))}
           </nav>
