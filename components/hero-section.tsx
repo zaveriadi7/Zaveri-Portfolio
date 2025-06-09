@@ -261,7 +261,7 @@ export default function HeroSection() {
                       //   rotate: angle + 90 + 5,
                       //   transition: { duration: 0.2 }
                       // }}
-                    >
+                    > 
                       <motion.div 
                         className="relative px-3 py-2 rounded-full bg-white text-sm font-medium text-gray-900 shadow-lg dark:bg-gray-800 dark:text-white z-20 whitespace-nowrap transform -rotate-90"
                         // whileHover={{ 
