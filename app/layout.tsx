@@ -3,6 +3,7 @@ import './globals.css'
 import { Merriweather } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
+import MobileDock from '@/components/ui/mobile-dock'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -66,7 +67,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
@@ -74,6 +75,7 @@ export default function RootLayout({
             <ThemeToggle />
           </div>
           {children}
+          <MobileDock />
         </ThemeProvider>
       </body>
     </html>

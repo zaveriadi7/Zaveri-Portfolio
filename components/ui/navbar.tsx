@@ -119,7 +119,7 @@ export default function Navbar() {
                 offset={-70}
                 duration={500}
                 spy={true}
-                activeClass="text-blue-500 dark:text-blue-400 font-semibold border-b-2 border-blue-500"
+                activeClass="text-blue-500 dark:text-indigo-400 font-semibold border-b-2 border-blue-500 dark:border-indigo-400"
                 className="text-sm font-mono font-thin hover:text-blue-500 dark:hover:text-gray-100 transition-colors px-3 py-1 cursor-pointer"
               >
                 {item.name}

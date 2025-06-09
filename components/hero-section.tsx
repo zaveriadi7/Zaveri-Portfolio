@@ -35,7 +35,7 @@ export default function HeroSection() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="gap-1.5 group bg-gray-900 hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 text-white">
+                <Button size="lg" className="gap-1.5 group bg-gray-900 hover:bg-gray-800 dark:bg-indigo-300 dark:text-black dark:hover:bg-gray-700 text-white">
                   <a href="#projects">View My Work</a>
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
