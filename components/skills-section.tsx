@@ -56,14 +56,116 @@ const skillLevels: Record<SkillKey, number> = {
 export default function SkillsSection() {
   const [hoveredSkill, setHoveredSkill] = useState<SkillKey | null>(null);
 
+  // Path animation variants
+  const pathVariants = {
+    initial: { pathLength: 0, opacity: 0 },
+    animate: (i: number) => ({
+      pathLength: 1,
+      opacity: [0.2, 0.4, 0.2],
+      transition: {
+        pathLength: { duration: 2, ease: "easeInOut" },
+        opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+        delay: i * 0.2,
+      },
+    }),
+  };
+
   return (
     <>
       <section
         id="skills"
-        className="w-full py-12 md:py-24 lg:py-24 bg-gray-50 dark:bg-black"
+        className="w-full py-12 md:py-24 lg:py-24 bg-gray-50 dark:bg-black relative overflow-hidden"
       >
+        {/* Animated background paths */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
+            {/* Corner paths */}
+            <motion.path
+              d="M0,20 Q20,0 40,20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={0}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M60,20 Q80,0 100,20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={1}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M0,80 Q20,100 40,80"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={2}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M60,80 Q80,100 100,80"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={3}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            {/* Wave paths */}
+            <motion.path
+              d="M20,10 C30,0 40,20 50,10"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.2"
+              custom={4}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M50,10 C60,0 70,20 80,10"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.2"
+              custom={5}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M20,90 C30,100 40,80 50,90"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.2"
+              custom={6}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+            <motion.path
+              d="M50,90 C60,100 70,80 80,90"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.2"
+              custom={7}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+          </svg>
+        </div>
+
         <motion.div 
-          className="container px-4 md:px-6 mx-auto"
+          className="container px-4 md:px-6 mx-auto relative z-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

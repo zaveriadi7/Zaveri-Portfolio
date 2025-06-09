@@ -14,11 +14,83 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 export default function ProjectsSection() {
+  // Path animation variants
+  const pathVariants = {
+    initial: { pathLength: 0, opacity: 0 },
+    animate: (i: number) => ({
+      pathLength: 1,
+      opacity: [0.2, 0.4, 0.2],
+      transition: {
+        pathLength: { duration: 2, ease: "easeInOut" },
+        opacity: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+        delay: i * 0.2,
+      },
+    }),
+  };
+
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-black">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50/50 dark:bg-black relative overflow-hidden">
+      {/* Background glow effects */}
+      <motion.div
+        className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-pink-500/10 to-orange-500/10 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Animated background paths */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
+          {[...Array(3)].map((_, i) => (
+            <motion.path
+              key={i}
+              d={`M${i * 30},${20 + i * 10} Q${50 + i * 10},${40 + i * 10} ${100 - i * 30},${20 + i * 10}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={i}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+          ))}
+          {[...Array(2)].map((_, i) => (
+            <motion.path
+              key={`circle-${i}`}
+              d={`M${50 + Math.cos(i * Math.PI) * 30},${50 + Math.sin(i * Math.PI) * 30} A30,30 0 0,1 ${50 + Math.cos((i+1) * Math.PI) * 30},${50 + Math.sin((i+1) * Math.PI) * 30}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="0.3"
+              custom={i}
+              variants={pathVariants}
+              initial="initial"
+              animate="animate"
+            />
+          ))}
+        </svg>
+      </div>
+
       <motion.div 
         id="projects" 
-        className="container px-4 md:px-6 mx-auto"
+        className="container px-4 md:px-6 mx-auto relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -29,16 +101,67 @@ export default function ProjectsSection() {
           variants={fadeIn}
         >
           <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-              Portfolio
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200">
-              Featured Projects
-            </h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              A selection of my recent work. Each project represents a unique
-              challenge and solution.
-            </p>
+            <motion.div 
+              className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 relative"
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.span
+                className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-md rounded-lg"
+                animate={{
+                  opacity: [0.2, 0.4, 0.2],
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <span className="relative z-10">Portfolio</span>
+            </motion.div>
+            <motion.h2 
+              className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.span
+                className="absolute -inset-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-lg rounded-lg"
+                animate={{
+                  opacity: [0.1, 0.2, 0.1],
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <span className="relative z-10">Featured Projects</span>
+            </motion.h2>
+            <motion.p 
+              className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.span
+                className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg"
+                animate={{
+                  opacity: [0.05, 0.1, 0.05],
+                  scale: [1, 1.02, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <span className="relative z-10">
+                A selection of my recent work. Each project represents a unique
+                challenge and solution.
+              </span>
+            </motion.p>
           </div>
         </motion.div>
         <motion.div 
@@ -46,7 +169,18 @@ export default function ProjectsSection() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
-            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full relative">
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                animate={{
+                  scale: [1, 1.02, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
               <motion.div 
                 className="relative h-48 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -69,34 +203,32 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <a href="https://github.com/zaveriadi7/vakeelsaab">
-                    <Button variant="secondary" size="sm" className="gap-2">
+                    <Button variant="secondary" size="sm" className="gap-2 relative group/button">
+                      <motion.span
+                        className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-md rounded-lg opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
+                        animate={{
+                          scale: [1, 1.05, 1],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
                       <motion.div
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        className="relative z-10"
                       >
                         <Github className="h-4 w-4" />
                       </motion.div>
-                      Code
+                      <span className="relative z-10">Code</span>
                     </Button>
                     </a>
                   </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {/* <Button variant="secondary" size="sm" className="gap-2">
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1, repeat: Infinity }}
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </motion.div>
-                      Demo
-                    </Button> */}
-                  </motion.div>
                 </motion.div>
               </motion.div>
-              <CardHeader>
+              <CardHeader className="relative z-10">
                 <motion.div
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
@@ -107,7 +239,7 @@ export default function ProjectsSection() {
                   </CardDescription>
                 </motion.div>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow relative z-10">
                 <motion.p 
                   className="text-sm text-gray-500 dark:text-gray-400 mb-4"
                   initial={{ opacity: 0 }}
@@ -131,26 +263,51 @@ export default function ProjectsSection() {
                       whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Badge variant="secondary">{tech}</Badge>
+                      <Badge variant="secondary" className="relative group/badge">
+                        <motion.span
+                          className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-sm rounded-lg opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300"
+                          animate={{
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        />
+                        <span className="relative z-10">{tech}</span>
+                      </Badge>
                     </motion.div>
                   ))}
                 </motion.div>
               </CardContent>
-              <CardFooter className="flex justify-between">
+              <CardFooter className="flex justify-between relative z-10">
                 <motion.div
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Button
                     variant="ghost"
-                    className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400 hover:text-primary"
+                    className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400 hover:text-primary relative group/button"
                   >
-                    <a href="https://github.com/zaveriadi7/vakeelsaab" target="_blank" rel="noopener noreferrer">
+                    <motion.span
+                      className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-sm rounded-lg opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
+                      animate={{
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    <a href="https://github.com/zaveriadi7/vakeelsaab" target="_blank" rel="noopener noreferrer" className="relative z-10">
                       View Project
                     </a>
                     <motion.div
                       animate={{ x: [0, 5, 0], y: [0, -5, 0] }}
                       transition={{ duration: 1, repeat: Infinity }}
+                      className="relative z-10"
                     >
                       <ArrowUpRight className="h-4 w-4" />
                     </motion.div>
@@ -270,12 +427,23 @@ export default function ProjectsSection() {
         >
           <Button 
             variant="outline" 
-            className="gap-1.5 group hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+            className="gap-1.5 group hover:bg-primary hover:text-primary-foreground transition-colors duration-300 relative"
           >
-            <a href="https://github.com/zaveriadi7/" target="_blank" rel="noopener noreferrer">
+            <motion.span
+              className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              animate={{
+                scale: [1, 1.02, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            <a href="https://github.com/zaveriadi7/" target="_blank" rel="noopener noreferrer" className="relative z-10">
               View All Projects
             </a>
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10" />
           </Button>
         </motion.div>
       </motion.div>
