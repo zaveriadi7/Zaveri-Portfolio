@@ -184,8 +184,18 @@ export default function HeroSection() {
                 ))}
               </motion.div>
             </motion.div>
-
-            <motion.div 
+           <ProfileCard
+           className="mx-auto sm:hidden"
+  name="Aditya Zaveri"
+  title="Software Engineer"
+  handle="aditya_zaveri"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl="/adityazaveri.png"
+  showUserInfo={true}
+  enableTilt={true}
+  onContactClick={() => console.log('Contact clicked')}
+/>            <motion.div 
               className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-indigo-200 ml-auto mr-0"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}

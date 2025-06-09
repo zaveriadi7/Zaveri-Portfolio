@@ -276,7 +276,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
             <img
-              className="avatar"
+              className="avatar h-[280px] w-[10px]"
               src={avatarUrl}
               alt={`${name || "User"} avatar`}
               loading="lazy"
