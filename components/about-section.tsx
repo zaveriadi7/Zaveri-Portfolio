@@ -100,46 +100,20 @@ export default function AboutSection() {
               <span className="relative z-10">About Me</span>
             </motion.div>
             <motion.h2 
-              className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200 relative"
+              className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.span
-                className="absolute -inset-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-lg rounded-lg"
-                animate={{
-                  opacity: [0.1, 0.2, 0.1],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
               <span className="relative z-10">My Journey</span>
             </motion.h2>
             <motion.p 
-              className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather relative"
+              className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <motion.span
-                className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg"
-                animate={{
-                  opacity: [0.05, 0.1, 0.05],
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <span className="relative z-10">
-                Full stack developer passionate about building clean, fast, and user-friendly web applications.
-              </span>
+              Full stack developer passionate about building clean, fast, and user-friendly web applications.
             </motion.p>
           </div>
         </motion.div>

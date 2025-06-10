@@ -4,10 +4,12 @@ import Link from "next/link";
 import BlurText from "./ui/blurtext";
 import { Button } from "@/components/ui/button";
 import LogoCarousel from "../components/ui/infiniteScroller";
-import ProfileCard from "./ui/ProfileCard";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { fadeIn, staggerContainer, hoverScale, slideIn } from "@/lib/animations";
 import GlowingSymbols from "./ui/GlowingSymbols";
+import PixelCard from "./ui/PixelCard";
+import PersonalPhoto from "../public/adityazaveri.png"
+import Image from "next/image";
 
 export default function HeroSection() {
   const { scrollYProgress } = useScroll();
@@ -378,18 +380,23 @@ export default function HeroSection() {
                 ))}
               </motion.div>
             </motion.div>
-            <ProfileCard
-              className="mx-auto sm:hidden"
-              name="Aditya Zaveri"
-              title="Software Engineer"
-              handle="aditya_zaveri"
-              status="Online"
-              contactText="Contact Me"
-              avatarUrl="/adityazaveri.png"
-              showUserInfo={true}
-              enableTilt={true}
-              onContactClick={() => console.log('Contact clicked')}
-            />
+
+<div className="block sm:hidden mx-auto">
+  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+    <div className="relative w-full h-full">
+      <Image 
+        src="/adityazaveri.webp" 
+        alt="Aditya Zaveri" 
+        width={250}
+        height={250}
+        className="w-[250px] h-2/3 object-cover rounded-2xl mx-auto mt-6"
+        priority={false}
+      />
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[25px]" /> */}
+    </div>
+    <p className="absolute bottom-20 text-indigo-300 font-bold text-xl">Aditya Zaveri</p>
+  </div>
+</div>
             <motion.div 
               className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-indigo-200 ml-auto mr-0"
               initial={{ opacity: 0, scale: 0.8 }}

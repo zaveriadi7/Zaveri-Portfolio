@@ -19,9 +19,9 @@ interface GlowingSymbolsProps {
 
 export default function GlowingSymbols({ className = "", count = 4, size = "md" }: GlowingSymbolsProps) {
   const sizeClasses = {
-    sm: "text-2xl",
-    md: "text-3xl",
-    lg: "text-4xl",
+    sm: "text-xl md:text-2xl",
+    md: "text-2xl md:text-3xl",
+    lg: "text-3xl md:text-4xl",
   };
 
   return (
@@ -43,8 +43,8 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
             }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{
-              opacity: [0.3, 0.5, 0.3],
-              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2],
+              scale: [1, 1.1, 1],
             }}
             transition={{
               duration: randomDuration,
@@ -56,12 +56,12 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
             <span className={`bg-gradient-to-r ${symbol.color} bg-clip-text text-transparent`}>
               {symbol.symbol}
             </span>
-            {/* Inner glow */}
+            {/* Inner glow - reduced on mobile */}
             <motion.div
-              className={`absolute -inset-2 bg-gradient-to-r ${symbol.color} blur-lg rounded-lg -z-10`}
+              className={`absolute -inset-1 md:-inset-2 bg-gradient-to-r ${symbol.color} blur-md md:blur-lg rounded-lg -z-10`}
               animate={{
-                opacity: [0.2, 0.4, 0.2],
-                scale: [1, 1.1, 1],
+                opacity: [0.1, 0.3, 0.1],
+                scale: [1, 1.05, 1],
               }}
               transition={{
                 duration: randomDuration,
@@ -70,12 +70,12 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
                 ease: "easeInOut",
               }}
             />
-            {/* Outer glow */}
+            {/* Outer glow - reduced on mobile */}
             <motion.div
-              className={`absolute -inset-4 bg-gradient-to-r ${symbol.color} blur-2xl rounded-lg -z-20`}
+              className={`absolute -inset-2 md:-inset-4 bg-gradient-to-r ${symbol.color} blur-xl md:blur-2xl rounded-lg -z-20`}
               animate={{
-                opacity: [0.1, 0.2, 0.1],
-                scale: [1, 1.2, 1],
+                opacity: [0.05, 0.15, 0.05],
+                scale: [1, 1.1, 1],
               }}
               transition={{
                 duration: randomDuration * 1.2,
