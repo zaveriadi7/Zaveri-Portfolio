@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function CertificationsSection() {
   // Path animation variants
@@ -47,7 +53,13 @@ export default function CertificationsSection() {
 
       {/* Animated background paths */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute top-0 left-0">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute top-0 left-0"
+        >
           {/* Corner paths */}
           <motion.path
             d="M0,20 Q20,0 40,20"
@@ -133,20 +145,20 @@ export default function CertificationsSection() {
         </svg>
       </div>
 
-      <motion.div 
-        id="certifications" 
+      <motion.div
+        id="certifications"
         className="container px-4 md:px-6 mx-auto relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
           variants={fadeIn}
         >
           <div className="space-y-2">
-            <motion.div 
+            <motion.div
               className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 relative"
               whileHover={{ scale: 1.05 }}
             >
@@ -164,7 +176,7 @@ export default function CertificationsSection() {
               />
               <span className="relative z-10">Certifications</span>
             </motion.div>
-            <motion.h2 
+            <motion.h2
               className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +196,7 @@ export default function CertificationsSection() {
               />
               <span className="relative z-10">Professional Certifications</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +220,7 @@ export default function CertificationsSection() {
             </motion.p>
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3"
           variants={staggerContainer}
         >
@@ -217,19 +229,22 @@ export default function CertificationsSection() {
               title: "AWS Certified Developer",
               issuer: "Amazon Web Services",
               date: "2023",
-              description: "Professional certification for AWS cloud development and services.",
+              description:
+                "Professional certification for AWS cloud development and services.",
             },
             {
               title: "MongoDB Certified Developer",
               issuer: "MongoDB University",
               date: "2023",
-              description: "Expertise in MongoDB database development and administration.",
+              description:
+                "Expertise in MongoDB database development and administration.",
             },
             {
               title: "React Advanced Concepts",
               issuer: "Meta",
               date: "2023",
-              description: "Advanced React patterns, performance optimization, and best practices.",
+              description:
+                "Advanced React patterns, performance optimization, and best practices.",
             },
           ].map((cert, index) => (
             <motion.div
@@ -248,16 +263,22 @@ export default function CertificationsSection() {
                   ease: "easeInOut",
                 }}
               />
-              <motion.div 
+              <motion.div
                 className="space-y-2 relative z-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <h3 className="text-xl font-bold">{cert.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{cert.issuer}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{cert.date}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{cert.description}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {cert.issuer}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {cert.date}
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {cert.description}
+                </p>
               </motion.div>
             </motion.div>
           ))}
@@ -265,4 +286,4 @@ export default function CertificationsSection() {
       </motion.div>
     </section>
   );
-} 
+}

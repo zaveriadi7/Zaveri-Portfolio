@@ -2,7 +2,16 @@
 
 import type React from "react";
 import { useState } from "react";
-import { Send, CheckCircle2, Mail, MapPin, Clock, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  Send,
+  CheckCircle2,
+  Mail,
+  MapPin,
+  Clock,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, hoverScale } from "@/lib/animations";
 
@@ -80,14 +89,14 @@ export default function ContactSection() {
       id="contact_me"
       className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-black"
     >
-      <motion.div 
+      <motion.div
         className="container px-4 md:px-6 mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
           variants={fadeIn}
         >
@@ -104,26 +113,27 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2"
           variants={staggerContainer}
         >
-          <motion.div 
-            className="space-y-6"
-            variants={fadeIn}
-          >
+          <motion.div className="space-y-6" variants={fadeIn}>
             <Card className="p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4 dark:text-indigo-200 font-merriweather">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-4 dark:text-indigo-200 font-merriweather">
+                Contact Information
+              </h3>
               <div className="space-y-6">
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Mail className="w-6 h-6 text-indigo-500 dark:text-indigo-400 mt-1" />
                   <div>
-                    <p className="font-medium dark:text-gray-200 font-merriweather">Email</p>
-                    <a 
+                    <p className="font-medium dark:text-gray-200 font-merriweather">
+                      Email
+                    </p>
+                    <a
                       href="mailto:adityazaveri7@gmail.com"
                       className="text-gray-500 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors font-merriweather"
                     >
@@ -131,32 +141,40 @@ export default function ContactSection() {
                     </a>
                   </div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <MapPin className="w-6 h-6 text-indigo-500 dark:text-indigo-400 mt-1" />
                   <div>
-                    <p className="font-medium dark:text-gray-200 font-merriweather">Location</p>
-                    <p className="text-gray-500 dark:text-gray-400 font-merriweather">Delhi, India</p>
+                    <p className="font-medium dark:text-gray-200 font-merriweather">
+                      Location
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 font-merriweather">
+                      Delhi, India
+                    </p>
                   </div>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex items-start gap-4"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Clock className="w-6 h-6 text-indigo-500 dark:text-indigo-400 mt-1" />
                   <div>
-                    <p className="font-medium dark:text-gray-200 font-merriweather">Availability</p>
+                    <p className="font-medium dark:text-gray-200 font-merriweather">
+                      Availability
+                    </p>
                     <p className="text-gray-500 dark:text-gray-400 font-merriweather">
                       I'm currently available for full-time opportunities.
                     </p>
                   </div>
                 </motion.div>
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="font-medium dark:text-gray-200 font-merriweather mb-1.5">Connect with Me</p>
+                  <p className="font-medium dark:text-gray-200 font-merriweather mb-1.5">
+                    Connect with Me
+                  </p>
                   <div className="flex gap-4">
                     {socialLinks.map((link) => (
                       <motion.a
@@ -177,24 +195,31 @@ export default function ContactSection() {
             </Card>
           </motion.div>
 
-          <motion.div 
-            className="space-y-4"
-            variants={fadeIn}
-          >
+          <motion.div className="space-y-4" variants={fadeIn}>
             <Card className="p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
               <form className="grid gap-4" onSubmit={handleSubmit}>
                 <div className="grid gap-2">
-                  <Label htmlFor="name" className="text-gray-700 dark:text-gray-300 font-merriweather">Name</Label>
-                  <Input 
-                    id="name" 
-                    name="name" 
-                    placeholder="Your name" 
-                    required 
+                  <Label
+                    htmlFor="name"
+                    className="text-gray-700 dark:text-gray-300 font-merriweather"
+                  >
+                    Name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
                     className="bg-white/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 focus:border-indigo-500 dark:focus:border-indigo-400 font-merriweather"
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="email" className="text-gray-700 dark:text-gray-300 font-merriweather">Email</Label>
+                  <Label
+                    htmlFor="email"
+                    className="text-gray-700 dark:text-gray-300 font-merriweather"
+                  >
+                    Email
+                  </Label>
                   <Input
                     id="email"
                     name="email"
@@ -205,7 +230,12 @@ export default function ContactSection() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="message" className="text-gray-700 dark:text-gray-300 font-merriweather">Message</Label>
+                  <Label
+                    htmlFor="message"
+                    className="text-gray-700 dark:text-gray-300 font-merriweather"
+                  >
+                    Message
+                  </Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -217,8 +247,8 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   className={`w-full gap-1.5 transition-all duration-300 font-merriweather ${
-                    isSent 
-                      ? "bg-green-600 hover:bg-green-700 text-white" 
+                    isSent
+                      ? "bg-green-600 hover:bg-green-700 text-white"
                       : "bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-100 dark:text-black"
                   }`}
                   disabled={isSubmitting || isSent}
@@ -242,24 +272,24 @@ export default function ContactSection() {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.footer 
-      className="w-full py-6 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-    >
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <p className="text-sm text-gray-500 dark:text-gray-400 font-merriweather">
-            © 2025 Aditya Zaveri. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-400 dark:text-gray-500 font-mono">
-            Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
-          </p>
+      <motion.footer
+        className="w-full py-6 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+      >
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400 font-merriweather">
+              © 2025 Aditya Zaveri. All rights reserved.
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 font-mono">
+              Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+            </p>
+          </div>
         </div>
-      </div>
-    </motion.footer>
+      </motion.footer>
     </section>
   );
 }

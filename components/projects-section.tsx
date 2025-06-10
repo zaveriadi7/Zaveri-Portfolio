@@ -1,7 +1,12 @@
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer, hoverScale, tapScale } from "@/lib/animations";
+import {
+  fadeIn,
+  staggerContainer,
+  hoverScale,
+  tapScale,
+} from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -46,20 +51,20 @@ export default function ProjectsSection() {
       {/* Glowing dev symbols */}
       <GlowingSymbols count={6} size="lg" className="z-0" />
 
-      <motion.div 
-        id="projects" 
+      <motion.div
+        id="projects"
         className="container px-4 md:px-6 mx-auto relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
           variants={fadeIn}
         >
           <div className="space-y-2">
-            <motion.div 
+            <motion.div
               className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 relative"
               whileHover={{ scale: 1.05 }}
             >
@@ -77,7 +82,7 @@ export default function ProjectsSection() {
               />
               <span className="relative z-10">Portfolio</span>
             </motion.div>
-            <motion.h2 
+            <motion.h2
               className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +102,7 @@ export default function ProjectsSection() {
               />
               <span className="relative z-10">Featured Projects</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,11 +127,15 @@ export default function ProjectsSection() {
             </motion.p>
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3"
           variants={staggerContainer}
         >
-          <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
+          <motion.div
+            variants={fadeIn}
+            whileHover={hoverScale}
+            whileTap={tapScale}
+          >
             <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full relative">
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -139,7 +148,7 @@ export default function ProjectsSection() {
                   ease: "easeInOut",
                 }}
               />
-              <motion.div 
+              <motion.div
                 className="relative h-48 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
@@ -151,7 +160,7 @@ export default function ProjectsSection() {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
@@ -161,27 +170,35 @@ export default function ProjectsSection() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <a href="https://github.com/zaveriadi7/vakeelsaab">
-                    <Button variant="secondary" size="sm" className="gap-2 relative group/button">
-                      <motion.span
-                        className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-md rounded-lg opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
-                        animate={{
-                          scale: [1, 1.05, 1],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      />
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                        className="relative z-10"
+                      <Button
+                        variant="secondary"
+                        size="sm"
+                        className="gap-2 relative group/button"
                       >
-                        <Github className="h-4 w-4" />
-                      </motion.div>
-                      <span className="relative z-10">Code</span>
-                    </Button>
+                        <motion.span
+                          className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 blur-md rounded-lg opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"
+                          animate={{
+                            scale: [1, 1.05, 1],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        />
+                        <motion.div
+                          animate={{ rotate: [0, 360] }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                          className="relative z-10"
+                        >
+                          <Github className="h-4 w-4" />
+                        </motion.div>
+                        <span className="relative z-10">Code</span>
+                      </Button>
                     </a>
                   </motion.div>
                 </motion.div>
@@ -193,12 +210,13 @@ export default function ProjectsSection() {
                 >
                   <CardTitle>VakeelSaabOnline</CardTitle>
                   <CardDescription>
-                    An online platform for free consultation with experienced lawyers
+                    An online platform for free consultation with experienced
+                    lawyers
                   </CardDescription>
                 </motion.div>
               </CardHeader>
               <CardContent className="flex-grow relative z-10">
-                <motion.p 
+                <motion.p
                   className="text-sm text-gray-500 dark:text-gray-400 mb-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -208,35 +226,40 @@ export default function ProjectsSection() {
                   include user authentication, lawyer registration and a backend
                   to handle scheduling of clients with lawyers.
                 </motion.p>
-                <motion.div 
+                <motion.div
                   className="flex flex-wrap gap-2"
                   variants={staggerContainer}
                   initial="hidden"
                   animate="visible"
                 >
-                  {["Node.js", "Express", "PostgreSQL", "EJS"].map((tech, index) => (
-                    <motion.div
-                      key={tech}
-                      variants={fadeIn}
-                      whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Badge variant="secondary" className="relative group/badge">
-                        <motion.span
-                          className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-sm rounded-lg opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300"
-                          animate={{
-                            scale: [1, 1.05, 1],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                        />
-                        <span className="relative z-10">{tech}</span>
-                      </Badge>
-                    </motion.div>
-                  ))}
+                  {["Node.js", "Express", "PostgreSQL", "EJS"].map(
+                    (tech, index) => (
+                      <motion.div
+                        key={tech}
+                        variants={fadeIn}
+                        whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Badge
+                          variant="secondary"
+                          className="relative group/badge"
+                        >
+                          <motion.span
+                            className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-sm rounded-lg opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300"
+                            animate={{
+                              scale: [1, 1.05, 1],
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                            }}
+                          />
+                          <span className="relative z-10">{tech}</span>
+                        </Badge>
+                      </motion.div>
+                    ),
+                  )}
                 </motion.div>
               </CardContent>
               <CardFooter className="flex justify-between relative z-10">
@@ -259,7 +282,12 @@ export default function ProjectsSection() {
                         ease: "easeInOut",
                       }}
                     />
-                    <a href="https://github.com/zaveriadi7/vakeelsaab" target="_blank" rel="noopener noreferrer" className="relative z-10">
+                    <a
+                      href="https://github.com/zaveriadi7/vakeelsaab"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-10"
+                    >
                       View Project
                     </a>
                     <motion.div
@@ -275,7 +303,11 @@ export default function ProjectsSection() {
             </Card>
           </motion.div>
 
-          <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
+          <motion.div
+            variants={fadeIn}
+            whileHover={hoverScale}
+            whileTap={tapScale}
+          >
             <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -323,7 +355,11 @@ export default function ProjectsSection() {
             </Card>
           </motion.div>
 
-          <motion.div variants={fadeIn} whileHover={hoverScale} whileTap={tapScale}>
+          <motion.div
+            variants={fadeIn}
+            whileHover={hoverScale}
+            whileTap={tapScale}
+          >
             <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -332,11 +368,11 @@ export default function ProjectsSection() {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href="https://github.com/zaveriadi7/Tasknest">
-                  <Button variant="secondary" size="sm" className="gap-2">
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Button>
+                  <a href="https://github.com/zaveriadi7/Tasknest">
+                    <Button variant="secondary" size="sm" className="gap-2">
+                      <Github className="h-4 w-4" />
+                      Code
+                    </Button>
                   </a>
                   {/* <Button variant="secondary" size="sm" className="gap-2">
                     <ExternalLink className="h-4 w-4" />
@@ -370,7 +406,11 @@ export default function ProjectsSection() {
                   variant="ghost"
                   className="gap-1 p-0 text-sm text-gray-500 dark:text-gray-400 hover:text-primary"
                 >
-                  <a href="https://github.com/zaveriadi7/Tasknest" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/zaveriadi7/Tasknest"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     View Project
                   </a>
                   <ArrowUpRight className="h-4 w-4" />
@@ -379,12 +419,9 @@ export default function ProjectsSection() {
             </Card>
           </motion.div>
         </motion.div>
-        <motion.div 
-          className="flex justify-center"
-          variants={fadeIn}
-        >
-          <Button 
-            variant="outline" 
+        <motion.div className="flex justify-center" variants={fadeIn}>
+          <Button
+            variant="outline"
             className="gap-1.5 group hover:bg-primary hover:text-primary-foreground transition-colors duration-300 relative"
           >
             <motion.span
@@ -398,7 +435,12 @@ export default function ProjectsSection() {
                 ease: "easeInOut",
               }}
             />
-            <a href="https://github.com/zaveriadi7/" target="_blank" rel="noopener noreferrer" className="relative z-10">
+            <a
+              href="https://github.com/zaveriadi7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10"
+            >
               View All Projects
             </a>
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 relative z-10" />

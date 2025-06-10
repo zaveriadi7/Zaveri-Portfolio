@@ -17,7 +17,11 @@ interface GlowingSymbolsProps {
   size?: "sm" | "md" | "lg";
 }
 
-export default function GlowingSymbols({ className = "", count = 4, size = "md" }: GlowingSymbolsProps) {
+export default function GlowingSymbols({
+  className = "",
+  count = 4,
+  size = "md",
+}: GlowingSymbolsProps) {
   const sizeClasses = {
     sm: "text-xl md:text-2xl",
     md: "text-2xl md:text-3xl",
@@ -25,7 +29,9 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
   };
 
   return (
-    <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
+    <div
+      className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}
+    >
       {[...Array(count)].map((_, i) => {
         const symbol = devSymbols[i % devSymbols.length];
         const randomX = Math.random() * 100;
@@ -53,7 +59,9 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
               ease: "easeInOut",
             }}
           >
-            <span className={`bg-gradient-to-r ${symbol.color} bg-clip-text text-transparent`}>
+            <span
+              className={`bg-gradient-to-r ${symbol.color} bg-clip-text text-transparent`}
+            >
               {symbol.symbol}
             </span>
             {/* Inner glow - reduced on mobile */}
@@ -89,4 +97,4 @@ export default function GlowingSymbols({ className = "", count = 4, size = "md" 
       })}
     </div>
   );
-} 
+}

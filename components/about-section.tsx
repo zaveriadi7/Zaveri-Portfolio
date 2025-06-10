@@ -334,7 +334,7 @@ export default function AboutSection() {
                   transform: "translate3d(0,50px,0)",
                 }}
                 animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-                easing="easeOutCubic"
+                easing={[0.33, 1, 0.68, 1]}
                 threshold={0.2}
               >
                 <motion.span

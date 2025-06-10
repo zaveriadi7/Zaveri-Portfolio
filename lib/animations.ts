@@ -60,4 +60,4 @@ export const tapScale = {
     duration: 0.1,
     ease: "easeInOut",
   },
-}; 
+};

@@ -6,7 +6,8 @@ const certifications = [
   {
     id: 1,
     title: "AWS Certified Solutions Architect – Associate",
-    image: "https://images.credly.com/size/300x300/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
+    image:
+      "https://images.credly.com/size/300x300/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
     description: "Issued by Amazon Web Services in January 2023.",
     href: "https://www.credly.com/badges/ac231f94-6119-47e0-ad63-15e40691b72a/public_url",
   },
@@ -36,7 +37,7 @@ const certifications = [
 export default function Certifications() {
   return (
     <div className="w-full py-12 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-900/50">
-      <motion.div 
+      <motion.div
         className="container px-4 md:px-6 mx-auto"
         initial="hidden"
         whileInView="visible"
@@ -57,9 +58,9 @@ export default function Certifications() {
                 transition={{ duration: 0.2 }}
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                <a 
-                  href={cert.href} 
-                  target="_blank" 
+                <a
+                  href={cert.href}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="block relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
                 >
@@ -76,7 +77,7 @@ export default function Certifications() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-4 space-y-2 flex-grow flex flex-col">
-                    <motion.h3 
+                    <motion.h3
                       className="text-base font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300 line-clamp-2 font-merriweather"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -84,7 +85,7 @@ export default function Certifications() {
                     >
                       {cert.title}
                     </motion.h3>
-                    <motion.p 
+                    <motion.p
                       className="text-sm text-gray-600 dark:text-gray-300 font-merriweather line-clamp-2"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -99,13 +100,18 @@ export default function Certifications() {
                       transition={{ delay: index * 0.1 + 0.2 }}
                     >
                       <span>View Certificate</span>
-                      <svg 
-                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
+                      <svg
+                        className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </motion.div>
                   </div>

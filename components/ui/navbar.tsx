@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
-    null
+    null,
   );
   const [isCompact, setIsCompact] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -87,8 +87,8 @@ export default function Navbar() {
           "transition-[width] delay-100",
           isCompact
             ? "py-2 bg-white/90 dark:bg-black/90 border dark:border-gray-850  backdrop-blur-sm shadow-md"
-            : "py-3 bg-white dark:bg-black  dark:border-gray-900  shadow-lg"  
-        )} 
+            : "py-3 bg-white dark:bg-black  dark:border-gray-900  shadow-lg",
+        )}
         style={{
           width: `${navbarWidth}vw`,
           maxWidth: "1200px",
@@ -101,7 +101,7 @@ export default function Navbar() {
               "absolute left-6 transition-all duration-500",
               shouldShowName
                 ? "opacity-100 translate-x-0"
-                : "opacity-50 -translate-x-4 pointer-events-none"
+                : "opacity-50 -translate-x-4 pointer-events-none",
             )}
           >
             <Link href="#hero" className="font-bold text-3xl">
@@ -123,7 +123,6 @@ export default function Navbar() {
                 className="text-sm font-mono font-thin hover:text-blue-500 dark:hover:text-gray-100 transition-colors px-3 py-1 cursor-pointer"
               >
                 {item.name}
-                
               </ScrollLink>
             ))}
           </nav>
@@ -204,4 +203,3 @@ export default function Navbar() {
     </header>
   );
 }
-

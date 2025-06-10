@@ -1,14 +1,31 @@
 "use client";
-import { ArrowRight, Github, Linkedin, Twitter, Mail as MailIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Twitter,
+  Mail as MailIcon,
+} from "lucide-react";
 import Link from "next/link";
 import BlurText from "./ui/blurtext";
 import { Button } from "@/components/ui/button";
 import LogoCarousel from "../components/ui/infiniteScroller";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
-import { fadeIn, staggerContainer, hoverScale, slideIn } from "@/lib/animations";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "framer-motion";
+import {
+  fadeIn,
+  staggerContainer,
+  hoverScale,
+  slideIn,
+} from "@/lib/animations";
 import GlowingSymbols from "./ui/GlowingSymbols";
 import PixelCard from "./ui/PixelCard";
-import PersonalPhoto from "../public/adityazaveri.png"
+import PersonalPhoto from "../public/adityazaveri.png";
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -215,19 +232,19 @@ export default function HeroSection() {
                 >
                   <motion.span
                     initial={{ opacity: 0, x: -20 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       x: 0,
-                      y: [0, -5, 0]
+                      y: [0, -5, 0],
                     }}
-                    transition={{ 
+                    transition={{
                       duration: 0.4,
                       delay: 0.1,
                       y: {
                         duration: 1.5,
                         repeat: Infinity,
-                        ease: "easeInOut"
-                      }
+                        ease: "easeInOut",
+                      },
                     }}
                     style={{ y: springY }}
                     className="relative"
@@ -309,16 +326,20 @@ export default function HeroSection() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <a href="#projects">
-                  <Button className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300">
-                    <motion.span
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={false}
-                      animate={{ x: ["-100%", "100%"] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                    />
-                    <span className="relative z-10">View Projects</span>
-                    <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
-                  </Button>
+                    <Button className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300">
+                      <motion.span
+                        className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      />
+                      <span className="relative z-10">View Projects</span>
+                      <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
+                    </Button>
                   </a>
                 </motion.div>
                 <motion.div
@@ -326,14 +347,23 @@ export default function HeroSection() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <a href="#workex">
-                    <Button variant="outline" className="w-full sm:w-auto relative overflow-hidden group">
+                    <Button
+                      variant="outline"
+                      className="w-full sm:w-auto relative overflow-hidden group"
+                    >
                       <motion.span
                         className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         initial={false}
                         animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                       />
-                      <span className="relative z-10">View Work Experience</span>
+                      <span className="relative z-10">
+                        View Work Experience
+                      </span>
                     </Button>
                   </a>
                 </motion.div>
@@ -347,18 +377,21 @@ export default function HeroSection() {
               >
                 {[
                   { icon: Github, href: "https://github.com/zaveriadi7" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/aditya-zaveri" },
-                  { icon: MailIcon, href: "mailto:adityazaveri7@gmail.com" }
+                  {
+                    icon: Linkedin,
+                    href: "https://linkedin.com/in/aditya-zaveri",
+                  },
+                  { icon: MailIcon, href: "mailto:adityazaveri7@gmail.com" },
                 ].map((item, index) => (
                   <motion.a
                     key={index}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.2,
                       rotate: 5,
-                      transition: { duration: 0.2 }
+                      transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.9 }}
                     className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white relative group"
@@ -381,51 +414,53 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
 
-<div className="block sm:hidden mx-auto">
-  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
-    <div className="relative w-full h-full">
-      <Image 
-        src="/adityazaveri.webp" 
-        alt="Aditya Zaveri" 
-        width={250}
-        height={250}
-        className="w-[250px] h-2/3 object-cover rounded-2xl mx-auto mt-6"
-        priority={false}
-      />
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[25px]" /> */}
-    </div>
-    <p className="absolute bottom-20 text-indigo-300 font-bold text-xl">Aditya Zaveri</p>
-  </div>
-</div>
-            <motion.div 
+            <div className="block sm:hidden mx-auto">
+              <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/adityazaveri.webp"
+                    alt="Aditya Zaveri"
+                    width={250}
+                    height={250}
+                    className="w-[250px] h-2/3 object-cover rounded-2xl mx-auto mt-6"
+                    priority={false}
+                  />
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[25px]" /> */}
+                </div>
+                <p className="absolute bottom-20 text-indigo-300 font-bold text-xl">
+                  Aditya Zaveri
+                </p>
+              </div>
+            </div>
+            <motion.div
               className="hidden lg:block relative w-[400px] h-[400px] rounded-full border-8 border-white shadow-xl dark:border-indigo-200 ml-auto mr-0"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               {/* Central emoji with floating animation */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 rounded-full"
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
-                  rotate: [0, 3, 0]
+                  rotate: [0, 3, 0],
                 }}
-                transition={{ 
+                transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               >
-                <motion.span 
+                <motion.span
                   className="text-6xl"
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.05, 1],
-                    rotate: [0, 5, 0]
+                    rotate: [0, 5, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                 >
                   👨‍💻
@@ -435,14 +470,14 @@ export default function HeroSection() {
               {/* Rotating wrapper with enhanced animations */}
               <motion.div
                 className="absolute inset-0 animate-spin-slow z-10"
-                animate={{ 
+                animate={{
                   rotate: 360,
-                  scale: [1, 1.05, 1]
+                  scale: [1, 1.05, 1],
                 }}
-                transition={{ 
+                transition={{
                   duration: 15,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               >
                 {[
@@ -471,18 +506,18 @@ export default function HeroSection() {
                     >
                       <motion.div
                         className="relative px-3 py-2 rounded-full bg-white text-sm font-medium text-gray-900 shadow-lg dark:bg-gray-800 dark:text-white z-20 whitespace-nowrap transform -rotate-90"
-                          // whileHover={{ 
-                          //   scale: 1.1,
-                          //   transition: { duration: 0.2 }
-                          // }}
+                        // whileHover={{
+                        //   scale: 1.1,
+                        //   transition: { duration: 0.2 }
+                        // }}
                       >
-                        <motion.div 
+                        <motion.div
                           className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 blur-md opacity-70 z-[-1]"
-                          animate={{ 
+                          animate={{
                             opacity: [0.5, 0.7, 0.5],
-                            scale: [1, 1.05, 1]
+                            scale: [1, 1.05, 1],
                           }}
-                          // transition={{ 
+                          // transition={{
                           //   duration: 1.5,
                           //   repeat: Infinity,
                           //   ease: "easeInOut"
