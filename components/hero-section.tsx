@@ -427,7 +427,7 @@ export default function HeroSection() {
                   />
                   {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-[25px]" /> */}
                 </div>
-                <p className="absolute bottom-20 text-indigo-300 font-bold text-xl">
+                <p className="absolute bottom-20 text-black dark:text-indigo-300 font-bold text-xl">
                   Aditya Zaveri
                 </p>
               </div>
