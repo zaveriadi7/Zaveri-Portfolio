@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import RotatingText from "./ui/changingText";
 import Certifications from "./ui/imageCarousel";
-import StackIcon from "tech-stack-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, staggerContainer, hoverScale } from "@/lib/animations";
 import { Progress } from "@/components/ui/progress";
@@ -52,6 +51,25 @@ const skillLevels: Record<SkillKey, number> = {
   "python": 80,
   "git": 90,
   "aws": 75,
+};
+
+const skillIcons: Record<SkillKey, string> = {
+  "reactjs": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "nextjs": "https://devrajchatribin.com/skills/Next.js.svg",
+  "typescript": "https://devrajchatribin.com/skills/TypeScript.svg",
+  "tailwindcss": "https://devrajchatribin.com/skills/TailwindCSS.svg",
+  "html5": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  "css3": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  "angular": "https://devrajchatribin.com/skills/Angular.svg",
+  "js": "https://devrajchatribin.com/skills/JavaScript.svg",
+  "nodejs": "https://devrajchatribin.com/skills/Node.js.svg",
+  "prisma": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+  "postgresql": "https://devrajchatribin.com/skills/PostgreSQL.svg",
+  "mysql": "https://devrajchatribin.com/skills/MySQL.svg",
+  "c++": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  "python": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "git": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  "aws": "https://devrajchatribin.com/skills/AWS.svg",
 };
 
 export default function SkillsSection() {
@@ -146,7 +164,11 @@ export default function SkillsSection() {
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <StackIcon name="reactjs" className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                      <img
+                        src={skillIcons["reactjs"]}
+                        alt="React"
+                        className="w-8 h-8"
+                      />
                     </motion.div>
                     <div>
                       <CardTitle className="text-gray-900 dark:text-indigo-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors duration-300">
@@ -191,7 +213,11 @@ export default function SkillsSection() {
                               ease: "easeOut"
                             }}
                           >
-                            <StackIcon name={tech} className="w-8 h-6" />
+                            <img
+                              src={skillIcons[tech as SkillKey]}
+                              alt={tech}
+                              className="w-8 h-6 object-contain"
+                            />
                           </motion.div>
                         </Badge>
                       </motion.div>
@@ -219,7 +245,11 @@ export default function SkillsSection() {
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <StackIcon name="nodejs" className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                      <img
+                        src={skillIcons["nodejs"]}
+                        alt="Node.js"
+                        className="w-8 h-8"
+                      />
                     </motion.div>
                     <div>
                       <CardTitle className="text-gray-900 dark:text-indigo-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors duration-300">
@@ -255,7 +285,11 @@ export default function SkillsSection() {
                               ease: "easeOut"
                             }}
                           >
-                            <StackIcon name={tech} className="w-8 h-6" />
+                            <img
+                              src={skillIcons[tech as SkillKey]}
+                              alt={tech}
+                              className="w-8 h-6 object-contain"
+                            />
                           </motion.div>
                         </Badge>
                       </motion.div>
@@ -283,7 +317,11 @@ export default function SkillsSection() {
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <StackIcon name="python" className="w-8 h-8 text-yellow-600 dark:text-yellow-400" />
+                      <img
+                        src={skillIcons["python"]}
+                        alt="Python"
+                        className="w-8 h-8"
+                      />
                     </motion.div>
                     <div>
                       <CardTitle className="text-gray-900 dark:text-indigo-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors duration-300">
@@ -319,7 +357,11 @@ export default function SkillsSection() {
                               ease: "easeOut"
                             }}
                           >
-                            <StackIcon name={tech} className="w-8 h-6" />
+                            <img
+                              src={skillIcons[tech as SkillKey]}
+                              alt={tech}
+                              className="w-8 h-6 object-contain"
+                            />
                           </motion.div>
                         </Badge>
                       </motion.div>
