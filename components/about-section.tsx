@@ -69,19 +69,19 @@ export default function AboutSection() {
       className="w-full py-12 md:py-24 lg:pt-20 bg-white dark:bg-black relative overflow-hidden"
     >
       <GlowingSymbols count={6} size="lg" className="z-0" />
-      <motion.div 
+      <motion.div
         className="container px-4 md:px-6 mx-auto relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center"
           variants={fadeIn}
         >
           <div className="space-y-2">
-            <motion.div 
+            <motion.div
               className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 relative"
               whileHover={{ scale: 1.05 }}
             >
@@ -99,7 +99,7 @@ export default function AboutSection() {
               />
               <span className="relative z-10">About Me</span>
             </motion.div>
-            <motion.h2 
+            <motion.h2
               className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -107,22 +107,23 @@ export default function AboutSection() {
             >
               <span className="relative z-10">My Journey</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              Full stack developer passionate about building clean, fast, and user-friendly web applications.
+              Full stack developer passionate about building clean, fast, and
+              user-friendly web applications.
             </motion.p>
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:gap-12 font-merriweather"
           variants={staggerContainer}
         >
-          <motion.div 
+          <motion.div
             className="flex flex-col justify-center space-y-4"
             variants={fadeIn}
           >
@@ -143,16 +144,17 @@ export default function AboutSection() {
                   My Background
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 font-merriweather">
-                  Final year B.Tech CSE student at VIT, building web apps and developer tools.
+                  Final year B.Tech CSE student at VIT, building web apps and
+                  developer tools.
                 </p>
                 <ul className="grid gap-3 font-merriweather">
                   {[
                     "B.Tech CSE @ VIT",
                     "From Curious Beginner to Startup Engineer",
                     "Built Passion Projects & Tools",
-                    "Making my mark at @Classplus and @Testbook"
+                    "Making my mark at @Classplus and @Testbook",
                   ].map((item, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors relative group/item"
                       whileHover={{ x: 5 }}
@@ -169,7 +171,9 @@ export default function AboutSection() {
                         }}
                       />
                       <CheckCircle className="h-5 w-5 text-indigo-500 dark:text-indigo-400 relative z-10" />
-                      <span className="text-gray-700 dark:text-gray-300 relative z-10">{item}</span>
+                      <span className="text-gray-700 dark:text-gray-300 relative z-10">
+                        {item}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>
@@ -177,7 +181,7 @@ export default function AboutSection() {
             </Card>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex flex-col justify-center space-y-4"
             variants={fadeIn}
           >
@@ -198,16 +202,17 @@ export default function AboutSection() {
                   My Approach
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 font-merriweather">
-                  Focused on clean code, scalable architecture, and optimal performance.
+                  Focused on clean code, scalable architecture, and optimal
+                  performance.
                 </p>
                 <ul className="grid gap-3 font-merriweather">
                   {[
                     "Clean & Scalable Code",
                     "Optimized Component Design",
                     "AWS Integration & CI/CD",
-                    "Always Iterating & Learning"
+                    "Always Iterating & Learning",
                   ].map((item, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors relative group/item"
                       whileHover={{ x: 5 }}
@@ -224,7 +229,9 @@ export default function AboutSection() {
                         }}
                       />
                       <CheckCircle className="h-5 w-5 text-indigo-500 dark:text-indigo-400 relative z-10" />
-                      <span className="text-gray-700 dark:text-gray-300 relative z-10">{item}</span>
+                      <span className="text-gray-700 dark:text-gray-300 relative z-10">
+                        {item}
+                      </span>
                     </motion.li>
                   ))}
                 </ul>
@@ -235,20 +242,20 @@ export default function AboutSection() {
       </motion.div>
 
       {/* Work Experience Section */}
-      <motion.section 
+      <motion.section
         className="w-full py-12 md:py-24 lg:py-2 bg-white dark:bg-black relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <motion.div 
+        <motion.div
           className="container px-4 md:px-6 mx-auto relative z-10"
           variants={fadeIn}
         >
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2" id="workex">
-              <motion.div 
+              <motion.div
                 className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800 mb-10 relative"
                 whileHover={{ scale: 1.05 }}
               >
@@ -266,7 +273,7 @@ export default function AboutSection() {
                 />
                 <span className="relative z-10">Work Experience</span>
               </motion.div>
-              <motion.h2 
+              <motion.h2
                 className="text-3xl font-bold tracking-tighter sm:text-5xl dark:text-indigo-200 relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -288,7 +295,7 @@ export default function AboutSection() {
               </motion.h2>
             </div>
             <div>
-              <motion.h2 
+              <motion.h2
                 className="text-3xl font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text flex flex-wrap justify-center gap-2 lg:text-6xl lg:pt-10 pb-10 relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +347,7 @@ export default function AboutSection() {
               </SplitText>
 
               <div className="max-w-5xl mx-auto px-6 py-10 font-merriweather text-gray-800 dark:text-gray-300">
-                <motion.h2 
+                <motion.h2
                   className="text-lg md:text-2xl font-extrabold mb-10 text-gray-900 dark:text-gray-100 relative"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -358,38 +365,43 @@ export default function AboutSection() {
                       ease: "easeInOut",
                     }}
                   />
-                  <span className="relative z-10">Professional Experience Highlights</span>
+                  <span className="relative z-10">
+                    Professional Experience Highlights
+                  </span>
                 </motion.h2>
 
-                <motion.div 
+                <motion.div
                   className="grid grid-cols-1 md:grid-cols-3 gap-4"
                   variants={staggerContainer}
                 >
                   {[
                     {
-                      title: "Next.js Migration",
-                      description: "Migrated front-end systems to Next.js for better performance and SEO."
+                      title: "Next.js Migration from Angular",
+                      description: "",
                     },
                     {
                       title: "Component Development",
-                      description: "Built reusable components with dynamic configurations for rapid scaling."
+                      description:
+                        "with dynamic configurations for rapid scaling.",
                     },
                     {
-                      title: "Performance",
-                      description: "Optimized rendering and implemented lazy loading for better performance."
+                      title: "Performance Optimization",
+                      description: "",
                     },
                     {
-                      title: "Data Integration",
-                      description: "Developed API-driven rendering with efficient data structures."
+                      title: "API-Data Integration",
+                      description: "",
                     },
                     {
-                      title: "UI Development",
-                      description: "Built responsive UIs using Tailwind CSS and ShadCN UI."
+                      title: "UI Development using TailwindCSS and ShadCN UI",
+                      description: "",
                     },
                     {
-                      title: "Code Quality",
-                      description: "Maintained code quality through best practices and version control."
-                    }
+                      title:
+                        "Debugging and Troubleshooting",
+                      description:
+                        "",
+                    },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -418,7 +430,7 @@ export default function AboutSection() {
                   ))}
                 </motion.div>
 
-                <motion.h2 
+                <motion.h2
                   className="text-3xl font-extrabold mt-20 mb-10 text-gray-900 dark:text-gray-100 relative"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -439,27 +451,27 @@ export default function AboutSection() {
                   <span className="relative z-10">Skills & Tools</span>
                 </motion.h2>
 
-                <motion.div 
+                <motion.div
                   className="grid grid-cols-1 md:grid-cols-4 gap-4"
                   variants={staggerContainer}
                 >
                   {[
                     {
                       title: "Frameworks",
-                      skills: "React.js, Next.js, Angular, TypeScript"
+                      skills: "React.js, Next.js, Angular",
                     },
                     {
                       title: "Languages",
-                      skills: "JavaScript, TypeScript, Python, C++"
+                      skills: "JavaScript, TypeScript, Python, C++",
                     },
                     {
                       title: "Tools & Platforms",
-                      skills: "Git, AWS, Docker, CI/CD"
+                      skills: "Git, GitHub, AWS, Docker",
                     },
                     {
                       title: "Design & UI",
-                      skills: "Tailwind CSS, ShadCN UI, Figma"
-                    }
+                      skills: "Tailwind CSS, ShadCN UI, Figma",
+                    },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
