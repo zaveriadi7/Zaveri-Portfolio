@@ -16,7 +16,7 @@ export default function MobileDock() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 block lg:hidden">
       <div className="mx-auto max-w-screen-md px-4 pb-4">
-        <div className="relative rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-lg border border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="relative rounded-full bg-white/80 dark:bg-black/20 backdrop-blur-lg border border-gray-200 dark:border-gray-800 shadow-lg">
           <div className="flex items-center justify-around p-2">
             {navItems.map((item) => (
               <ScrollLink

@@ -117,8 +117,7 @@ export default function HeroSection() {
           {codeSymbols.map((symbol, i) => (
             <motion.div
               key={i}
-              className={`absolute text-3xl font-mono font-bold text-indigo-500/40 dark:text-indigo-400/40
-                ${i >= 4 ? 'hidden md:block' : ''}`}
+              className={`absolute text-3xl font-mono font-bold text-indigo-500/40 dark:text-indigo-400/40 hidden md:block`}
               style={{
                 left: `${10 + i * 12}%`,
                 top: `${10 + (i % 4) * 25}%`,
@@ -166,7 +165,7 @@ export default function HeroSection() {
           {[...Array(4)].map((_, i) => (
             <motion.div
               key={`line-${i}`}
-              className="absolute h-0.5 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 dark:from-indigo-400/20 dark:to-purple-400/20 origin-left"
+              className="absolute h-0.5 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 dark:from-indigo-400/20 dark:to-purple-400/20 origin-left hidden md:block"
               style={{
                 left: `${10 + i * 20}%`,
                 top: `${30 + (i % 3) * 20}%`,
