@@ -447,7 +447,7 @@ export default function HeroSection() {
               >
                 {[
                   "Backend Developer",
-                  "Cloud Solutions",
+                  "Cloud Architect",
                   "Caffeine-Fueled Coder",
                   "Frontend Developer",
                   "Database Architect",

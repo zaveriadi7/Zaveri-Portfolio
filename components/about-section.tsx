@@ -105,7 +105,9 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="relative z-10">My Journey</span>
+              <span className="relative z-10 font-merriweather">
+                My Journey
+              </span>
             </motion.h2>
             <motion.p
               className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 font-merriweather"
@@ -139,19 +141,20 @@ export default function AboutSection() {
                   ease: "easeInOut",
                 }}
               />
-              <div className="space-y-4 relative z-10">
+              <div className="space-y-2 relative z-10">
                 <h3 className="text-2xl font-bold dark:text-indigo-200">
                   My Background
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 font-merriweather">
                   Final year B.Tech CSE student at VIT, building web apps and
-                  developer tools.
+                  mobile friendly websites.
                 </p>
-                <ul className="grid gap-3 font-merriweather">
+                <ul className="grid gap-0 font-merriweather">
                   {[
+                    "PCM CS @Cambridge School,Noida",
                     "B.Tech CSE @ VIT",
-                    "From Curious Beginner to Startup Engineer",
-                    "Built Passion Projects & Tools",
+                    "From failing in coding class at school to Startup Engineer",
+                    "Enabling Small Businesses and NGOs build their own websites.",
                     "Making my mark at @Classplus and @Testbook",
                   ].map((item, index) => (
                     <motion.li
@@ -197,7 +200,7 @@ export default function AboutSection() {
                   ease: "easeInOut",
                 }}
               />
-              <div className="space-y-4 relative z-10">
+              <div className="space-y-1 relative z-10">
                 <h3 className="text-2xl font-bold dark:text-indigo-200">
                   My Approach
                 </h3>
@@ -205,12 +208,14 @@ export default function AboutSection() {
                   Focused on clean code, scalable architecture, and optimal
                   performance.
                 </p>
-                <ul className="grid gap-3 font-merriweather">
+                <ul className="grid gap-0 font-merriweather">
                   {[
-                    "Clean & Scalable Code",
-                    "Optimized Component Design",
-                    "AWS Integration & CI/CD",
-                    "Always Iterating & Learning",
+                    "Develop as an Art, Not Just Function",
+                    "User-First,Performance-Obsessed",
+                    "Future-Proof Architecture Thinking",
+                    "Minimalist UI, Maximum Impact",
+                    "Iterative Perfection Over Perfect Launches",
+                    "Acheiving Business Goals does not mean compromising on User Experience",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -346,7 +351,7 @@ export default function AboutSection() {
                 />
               </SplitText>
 
-              <div className="max-w-5xl mx-auto px-6 py-10 font-merriweather text-gray-800 dark:text-gray-300">
+              <div className="max-w-5xl mx-auto px-6 pt-10 font-merriweather text-gray-800 dark:text-gray-300">
                 <motion.h2
                   className="text-lg md:text-2xl font-extrabold mb-10 text-gray-900 dark:text-gray-100 relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -380,9 +385,8 @@ export default function AboutSection() {
                       description: "",
                     },
                     {
-                      title: "Component Development",
-                      description:
-                        "with dynamic configurations for rapid scaling.",
+                      title: "Component Development and Design",
+                      description: "",
                     },
                     {
                       title: "Performance Optimization",
@@ -397,17 +401,15 @@ export default function AboutSection() {
                       description: "",
                     },
                     {
-                      title:
-                        "Debugging and Troubleshooting",
-                      description:
-                        "",
+                      title: "Debugging and Troubleshooting",
+                      description: "",
                     },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
                       variants={fadeIn}
                       whileHover={hoverScale}
-                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 relative group"
+                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 relative group"
                     >
                       <motion.div
                         className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -420,7 +422,7 @@ export default function AboutSection() {
                           ease: "easeInOut",
                         }}
                       />
-                      <h3 className="text-xl font-semibold mb-3 text-gray-600 dark:text-indigo-200 relative z-10">
+                      <h3 className="text-xl font-semibold mb-1 text-center  text-gray-600 dark:text-indigo-200 relative z-10">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400 relative z-10">
@@ -477,7 +479,7 @@ export default function AboutSection() {
                       key={index}
                       variants={fadeIn}
                       whileHover={hoverScale}
-                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 relative group"
+                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-3 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 relative group"
                     >
                       <motion.div
                         className="absolute -inset-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
