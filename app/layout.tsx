@@ -47,29 +47,29 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Aditya Zaveri',
-              url: 'https://adityazaveri.vercel.app',
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Aditya Zaveri",
+              url: "https://adityazaveri.vercel.app",
               sameAs: [
-                'https://www.linkedin.com/in/aditya-zaveri/',
-                'https://github.com/zaveriadi7'
+                "https://www.linkedin.com/in/aditya-zaveri/",
+                "https://github.com/zaveriadi7",
               ],
-              jobTitle: 'Software Developer',
+              jobTitle: "Software Developer",
               worksFor: {
-                '@type': 'Organization',
-                name: 'Classplus'
-              }
-            })
+                "@type": "Organization",
+                name: "Classplus",
+              },
+            }),
           }}
         />
       </head>
-      <body>
+      <body className="transition-colors duration-700 ease-in-out">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
-          disableTransitionOnChange
+          enableTransitionOnChange
         >
           <div className="fixed top-4 right-4 z-50">
             <ThemeToggle />
@@ -79,5 +79,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
