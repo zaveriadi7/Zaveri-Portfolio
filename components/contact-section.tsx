@@ -242,6 +242,24 @@ export default function ContactSection() {
           </motion.div>
         </motion.div>
       </motion.div>
+      <motion.footer 
+      className="w-full py-6 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+    >
+      <div className="container px-4 md:px-6 mx-auto">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <p className="text-sm text-gray-500 dark:text-gray-400 font-merriweather">
+            © 2025 Aditya Zaveri. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 font-mono">
+            Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+          </p>
+        </div>
+      </div>
+    </motion.footer>
     </section>
   );
 }
