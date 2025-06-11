@@ -52,7 +52,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-xl">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-black/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-xl">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-indigo-200">
             {project.title}
@@ -74,11 +74,12 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
               <img
                 src={project.images[currentImageIndex]}
                 alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                className="w-full h-full object-contain bg-gray-50 dark:bg-gray-800"
+                className="w-full h-full object-fit bg-gray-50 dark:bg-gray-800"
               />
             </motion.div>
 
             {/* Navigation Buttons */}
+            {project.images.length>1 &&
             <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity">
               <Button
                 variant="ghost"
@@ -99,8 +100,10 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                 <ChevronRight className="h-6 w-6" />
               </Button>
             </div>
+}
 
             {/* Image Indicators */}
+            {project.images.length>1 &&
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
               {project.images.map((_, index) => (
                 <button
@@ -118,6 +121,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                 />
               ))}
             </div>
+}
           </div>
 
           {/* Project Description */}

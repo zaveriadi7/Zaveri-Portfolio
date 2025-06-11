@@ -49,8 +49,8 @@ const projects = [
     longDescription: "A comprehensive legal consultation platform that connects clients with experienced lawyers. The platform streamlines the process of finding and scheduling consultations with legal professionals, making legal advice more accessible.",
     images: [
       "/vakeelsaab.png",
-      "/vakeelsaab-2.png",
-      "/vakeelsaab-3.png"
+      // "/vakeelsaab-2.png",
+      // "/vakeelsaab-3.png"
     ],
     githubUrl: "https://github.com/zaveriadi7/vakeelsaab",
     technologies: ["Node.js", "Express", "PostgreSQL", "EJS"],
@@ -69,8 +69,8 @@ const projects = [
     longDescription: "An innovative recipe generation platform that leverages AI to create personalized recipes based on available ingredients and dietary preferences. The application provides a seamless user experience with real-time recipe generation and customization options.",
     images: [
       "/chefclaude.png",
-      "/chefclaude-2.png",
-      "/chefclaude-3.png"
+      // "/chefclaude-2.png",
+      // "/chefclaude-3.png"
     ],
     githubUrl: "https://github.com/zaveriadi7/chefclaude",
     technologies: ["React", "Node.js", "Anthropic API", "Lazy Loading"],
@@ -89,8 +89,8 @@ const projects = [
     longDescription: "A comprehensive task management solution that helps users organize their work and personal tasks efficiently. The platform includes advanced features like task sharing, reminders, and file attachments, making it a complete productivity tool.",
     images: [
       "/tasknest.png",
-      "/tasknest-2.png",
-      "/tasknest-3.png"
+      // "/tasknest-2.png",
+      // "/tasknest-3.png"
     ],
     githubUrl: "https://github.com/zaveriadi7/Tasknest",
     technologies: ["EJS", "Node.js", "PostgreSQL", "Express"],
