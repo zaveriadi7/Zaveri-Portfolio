@@ -30,7 +30,7 @@ type SkillKey =
   | "postgresql"
   | "mysql"
   | "c++"
-  | "python"
+  // | "python"
   | "git"
   | "aws";
 
@@ -48,7 +48,7 @@ const skillLevels: Record<SkillKey, number> = {
   postgresql: 85,
   mysql: 80,
   "c++": 85,
-  python: 80,
+  // python: 80,
   git: 90,
   aws: 75,
 };
@@ -71,8 +71,8 @@ const skillIcons: Record<SkillKey, string> = {
   mysql: "https://devrajchatribin.com/skills/MySQL.svg",
   "c++":
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-  python:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  // python:
+  //   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
   aws: "https://devrajchatribin.com/skills/AWS.svg",
 };
@@ -325,8 +325,8 @@ export default function SkillsSection() {
                       transition={{ duration: 0.5 }}
                     >
                       <img
-                        src={skillIcons["python"]}
-                        alt="Python"
+                        src={skillIcons["git"]}
+                        alt="git"
                         className="w-8 h-8"
                       />
                     </motion.div>
@@ -342,7 +342,7 @@ export default function SkillsSection() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4">
-                    {["c++", "python", "git", "aws"].map((tech, index) => (
+                    {["c++", "git", "aws"].map((tech, index) => (
                       <motion.div
                         key={tech}
                         className="flex flex-col items-center gap-2"

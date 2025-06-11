@@ -83,7 +83,8 @@ export default function ContactSection() {
       setIsSubmitting(false);
     }
   };
-
+  
+  // const currentYear=date.getFullYear;
   return (
     <section
       id="contact_me"
@@ -282,7 +283,7 @@ export default function ContactSection() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400 font-merriweather">
-              © 2025 Aditya Zaveri. All rights reserved.
+              © {new Date().getFullYear()} Aditya Zaveri. All rights reserved.
             </p>
             <p className="text-xs text-gray-400 dark:text-gray-500 font-mono">
               Built with ❤️ using Next.js, TypeScript, and Tailwind CSS

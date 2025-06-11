@@ -414,7 +414,7 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
 
-            <div className="block sm:hidden mx-auto">
+            <div className="block md:hidden mx-auto">
               <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
                 <div className="relative w-full h-full">
                   <Image
@@ -441,29 +441,29 @@ export default function HeroSection() {
               {/* Central emoji with floating animation */}
               <motion.div
                 className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 rounded-full"
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 3, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+                // animate={{
+                //   y: [0, -10, 0],
+                //   rotate: [0, 3, 0],
+                // }}
+                // transition={{
+                //   duration: 2,
+                //   repeat: Infinity,
+                //   ease: "easeInOut",
+                // }}
               >
                 <motion.span
                   className="text-6xl"
-                  animate={{
-                    scale: [1, 1.05, 1],
-                    rotate: [0, 5, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  // animate={{
+                  //   scale: [1, 1.05, 1],
+                  //   rotate: [0, 5, 0],
+                  // }}
+                  // transition={{
+                  //   duration: 2,
+                  //   repeat: Infinity,
+                  //   ease: "easeInOut",
+                  // }}
                 >
-                  👨‍💻
+                  <img src="/adityazaveri.webp" alt="" className="h-[210px] w-[200px] object-cover rounded-full"/>
                 </motion.span>
               </motion.div>
 

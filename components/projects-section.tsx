@@ -388,14 +388,14 @@ export default function ProjectsSection() {
               </CardHeader>
               <CardContent className="flex-grow">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  Built with React, Node.js, Express, CSS, PostgreSQL. Features
+                  Built with EJS, Node.js, Express, CSS, PostgreSQL. Features
                   include user authentication, task management, and a backend to
                   handle notifications. Users can create, update, and delete
                   tasks, set tags, receive reminders, upload files and have
                   reminders on gmail.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">React</Badge>
+                  <Badge variant="secondary">EJS</Badge>
                   <Badge variant="secondary">Node.js</Badge>
                   <Badge variant="secondary">PostgreSQL</Badge>
                   <Badge variant="secondary">Express</Badge>

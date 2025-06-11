@@ -210,12 +210,12 @@ export default function AboutSection() {
                 </p>
                 <ul className="grid gap-0 font-merriweather">
                   {[
-                    "Develop as an Art, Not Just Function",
+                    "Crafting Code with Purpose and Precision",
                     "User-First,Performance-Obsessed",
                     "Future-Proof Architecture Thinking",
                     "Minimalist UI, Maximum Impact",
                     "Iterative Perfection Over Perfect Launches",
-                    "Acheiving Business Goals does not mean compromising on User Experience",
+                    "Acheiving Business Goals without compromising on User Experience",
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -464,11 +464,11 @@ export default function AboutSection() {
                     },
                     {
                       title: "Languages",
-                      skills: "JavaScript, TypeScript, Python, C++",
+                      skills: "JavaScript, TypeScript, C++",
                     },
                     {
                       title: "Tools & Platforms",
-                      skills: "Git, GitHub, AWS, Docker",
+                      skills: "Git, GitHub, AWS",
                     },
                     {
                       title: "Design & UI",
