@@ -329,11 +329,11 @@ export default function HeroSection() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button 
-                    className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300"
+                    className="w-full sm:w-auto relative overflow-hidden group bg-black text-white dark:bg-black dak:text-blue-100 border-2 dark:border-blue-900 shadow-[0_0_10px_rgba(29,78,216,0.3)] hover:bg-black/90 hover:border-blue-800"
                     onClick={() => setIsTerminalOpen(true)}
                   >
                     <motion.span
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-blue-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={false}
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{
@@ -559,50 +559,48 @@ export default function HeroSection() {
               ],
               skills: {
                 "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
-                "Backend": ["Node.js", "Express", "Python", "Java", "Spring Boot", "REST APIs"],
-                "Cloud & DevOps": ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"],
-                "Database": ["MongoDB", "PostgreSQL", "Redis", "MySQL"],
-                "Tools & Others": ["VS Code", "Postman", "Jira", "Agile", "GitHub"]
+                "Backend": ["Node.js", "Express", "REST APIs"],
+                "Cloud & DevOps": ["AWS", "CI/CD", "Git"],
+                "Database": ["PostgreSQL", "MySQL"],
+                "Tools & Others": ["VS Code", "Postman", "Jira", "GitHub"]
               },
               projects: [
                 {
-                  title: "Personal Portfolio",
-                  description: "A modern, interactive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features include smooth animations, dark mode, and a terminal-style interface.",
-                  technologies: "Next.js, TypeScript, Tailwind CSS, Framer Motion",
-                  link: "https://github.com/zaveriadi7/portfolio"
+                  title: "VakeelSaabOnline",
+                  description: "An online platform for free consultation with experienced lawyers. A comprehensive legal consultation platform that connects clients with experienced lawyers. The platform streamlines the process of finding and scheduling consultations with legal professionals, making legal advice more accessible.",
+                  technologies: "Node.js, Express, PostgreSQL, EJS",
+                  link: "https://github.com/zaveriadi7/vakeelsaab"
                 },
                 {
-                  title: "E-commerce Platform",
-                  description: "A full-featured e-commerce solution with product management, cart functionality, and secure checkout integration.",
-                  technologies: "React, Node.js, MongoDB, Stripe",
-                  link: "https://github.com/zaveriadi7/ecommerce"
+                  title: "ChefClaude",
+                  description: "An innovative recipe generation platform that leverages AI to create personalized recipes based on available ingredients and dietary preferences. The application provides a seamless user experience with real-time recipe generation and customization options.",
+                  technologies: "React, Node.js, Anthropic API, Lazy Loading",
+                  link: "https://github.com/zaveriadi7/chefclaude"
                 },
                 {
-                  title: "Task Management App",
-                  description: "A collaborative task management tool with real-time updates, user permissions, and file attachments.",
-                  technologies: "Next.js, TypeScript, Prisma, PostgreSQL",
-                  link: "https://github.com/zaveriadi7/task-manager"
+                  title: "TaskNest",
+                  description: "A comprehensive task management solution that helps users organize their work and personal tasks efficiently. The platform includes advanced features like task sharing, reminders, and file attachments, making it a complete productivity tool.",
+                  technologies: "EJS, Node.js, PostgreSQL, Express",
+                  link: "https://github.com/zaveriadi7/Tasknest"
                 }
               ],
               contact: {
                 email: "adityazaveri7@gmail.com",
                 github: "https://github.com/zaveriadi7",
                 linkedin: "https://linkedin.com/in/aditya-zaveri",
-                twitter: "https://twitter.com/zaveriadi7"
               }
             }}
             height="100%"
             welcomeMessage={
               <div className="mb-4">
-                <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)] text-xs sm:text-sm overflow-x-auto">
+                <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)] text-xs sm:text-lg overflow-x-auto">
                   {`
-  _____                    _             _   ______         _    __      _ _       
- |_   _|                  (_)           | |  | ___ \\       | |  / _|    | (_)      
-   | | ___ _ __ _ __ ___   _ _ __   __ _| |  | |_/ /__  ___| |_| |_ ___ | |_  ___  
-   | |/ _ \\ '__| '_ \` _ \\ | | '_ \\ / _\` | |  |  __/ _ \\/ __| __|  _/ _ \\| | |/ _ \\ 
-   | |  __/ |  | | | | | || | | | | (_| | |  | | | (_) \\__ \\ |_| || (_) | | | (_) |
-   \\_/\\___|_|  |_| |_| |_|/ |_| |_|\\__,_|_|  \\_|  \\___/|___/\\__|_| \\___/|_|_|\\___/ 
-                         |__/                                                      
+ _    _      _ _       _ 
+| |  | |    | | |     | |
+| |__| | ___| | | ___ | |
+|  __  |/ _ \\ | |/ _ \\| |
+| |  | |  __/ | | (_) |_|
+|_|  |_|\\___|_|_|\\___/(_)
 `}
                 </pre>
                 <p className="text-blue-400 text-sm sm:text-base">Welcome to Aditya Zaveri's Interactive Terminal Portfolio!</p>

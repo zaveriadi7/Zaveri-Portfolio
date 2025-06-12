@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, type KeyboardEvent } from "react"
 import type { JSX } from "react/jsx-runtime"
+import { motion, AnimatePresence } from "framer-motion"
 
 export interface CommandType {
   description: string
@@ -433,30 +434,6 @@ export function TerminalPortfolio({
       execute: (args) => <div className="text-blue-300">{args.join(" ")}</div>,
     },
 
-    date: {
-      description: "Display the current date and time",
-      execute: () => <div className="text-blue-300">{new Date().toString()}</div>,
-    },
-
-    whoami: {
-      description: "Display visitor information",
-      execute: () => <div className="text-blue-300">visitor (You are viewing my portfolio)</div>,
-    },
-
-    ls: {
-      description: "List directory contents",
-      execute: () => (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-          <FileItem icon="file" name="about.txt" />
-          <FileItem icon="file" name="skills.md" />
-          <FileItem icon="folder" name="projects/" />
-          <FileItem icon="file" name="contact.json" />
-          <FileItem icon="file" name="resume.pdf" />
-          <FileItem icon="folder" name="blog/" />
-        </div>
-      ),
-    },
-
     resume: {
       description: "View my resume",
       execute: () => (
@@ -465,7 +442,7 @@ export function TerminalPortfolio({
           <p className="text-blue-300">You can view or download my resume:</p>
           <div className="mt-2">
             <a
-              href="#"
+              href="https://drive.google.com/file/d/14BndNCmSzSJXtUU1HC5fvIOja1N7kjzl/view?usp=sharing"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors shadow-[0_0_10px_rgba(29,78,216,0.3)]"
             >
               {getIcon("download")()}
@@ -482,17 +459,6 @@ export function TerminalPortfolio({
 
   const defaultWelcomeMessage = (
     <div className="mb-4">
-      <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)] text-xs sm:text-sm overflow-x-auto">
-        {`
- _____                    _             _   ______         _    __      _ _       
- |_   _|                  (_)           | |  | ___ \\       | |  / _|    | (_)      
-   | | ___ _ __ _ __ ___   _ _ __   __ _| |  | |_/ /__  ___| |_| |_ ___ | |_  ___  
-   | |/ _ \\ '__| '_ \` _ \\ | | '_ \\ / _\` | |  |  __/ _ \\/ __| __|  _/ _ \\| | |/ _ \\ 
-   | |  __/ |  | | | | | || | | | | (_| | |  | | | (_) \\__ \\ |_| || (_) | | | (_) |
-   \\_/\\___|_|  |_| |_| |_|/ |_| |_|\\__,_|_|  \\_|  \\___/|___/\\__|_| \\___/|_|_|\\___/ 
-                         |__/                                                      
-`}
-      </pre>
       <p className="text-blue-400 text-sm sm:text-base">Welcome to my interactive terminal portfolio!</p>
       <p className="text-sm sm:text-base">
         Type <span className="text-blue-500 font-semibold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">help</span> to see
@@ -600,32 +566,88 @@ export function TerminalPortfolio({
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className={`bg-zinc-950 rounded-lg border border-blue-900/50 shadow-lg shadow-blue-500/20 overflow-hidden ${className}`}
     >
-      <div className="flex items-center px-4 py-2 bg-black border-b border-blue-900/50">
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-        </div>
-        <div className="mx-2 text-sm font-semibold text-blue-500">terminal@portfolio</div>
-      </div>
+      <motion.div 
+        className="flex items-center px-4 py-2 bg-black border-b border-blue-900/50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.div 
+          className="flex space-x-2"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+        >
+          <motion.div 
+            className="w-3 h-3 bg-red-500 rounded-full"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          />
+          <motion.div 
+            className="w-3 h-3 bg-yellow-500 rounded-full"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          />
+          <motion.div 
+            className="w-3 h-3 bg-green-500 rounded-full"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          />
+        </motion.div>
+        <motion.div 
+          className="mx-2 text-sm font-semibold text-blue-500"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+        >
+          terminal@portfolio
+        </motion.div>
+      </motion.div>
       <div
         ref={terminalRef}
         className="p-4 sm:p-6 overflow-y-auto bg-black font-mono text-sm sm:text-base"
         style={{ height }}
         onClick={() => inputRef.current?.focus()}
       >
-        {output.map((line, index) => (
-          <div key={index} className="mb-2 break-words">
-            {line}
-          </div>
-        ))}
-        <div className="flex items-center mt-1 group">
-          <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] hidden sm:inline">zaveri@portfolio</span>
-          <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] sm:hidden">visitor</span>:
-          <span className="text-purple-400">~$</span>&nbsp;
+        <AnimatePresence>
+          {output.map((line, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="mb-2 break-words"
+            >
+              {line}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+        <motion.div 
+          className="flex items-center mt-1 group"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
+        >
+          <motion.span 
+            className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] hidden sm:inline"
+            whileHover={{ scale: 1.05 }}
+          >
+            zaveri@portfolio
+          </motion.span>
+          <motion.span 
+            className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] sm:hidden"
+            whileHover={{ scale: 1.05 }}
+          >
+            visitor
+          </motion.span>
+          :<span className="text-purple-400">~$</span>&nbsp;
           <input
             ref={inputRef}
             type="text"
@@ -635,10 +657,23 @@ export function TerminalPortfolio({
             className="flex-1 bg-transparent outline-none border-none text-blue-400 caret-transparent text-sm sm:text-base"
             aria-label="Terminal input"
           />
-          <span className="animate-pulse text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">▋</span>
-        </div>
+          <motion.span 
+            className="animate-pulse text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]"
+            animate={{ 
+              opacity: [1, 0.5, 1],
+              scale: [1, 1.05, 1]
+            }}
+            transition={{ 
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            ▋
+          </motion.span>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
