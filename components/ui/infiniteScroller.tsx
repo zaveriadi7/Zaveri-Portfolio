@@ -107,7 +107,7 @@ export default function LogoCarousel() {
                     alt={title}
                     className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                   />
-                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-serif text-white">
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold font-merriweather text-white">
                     {title}
                   </span>
                 </div>

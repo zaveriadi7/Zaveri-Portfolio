@@ -6,6 +6,7 @@ import {
   Send,
   CheckCircle2,
   Mail,
+  FileDown,
   MapPin,
   Clock,
   Github,
@@ -35,6 +36,11 @@ const socialLinks = [
     icon: Linkedin,
     href: "https://linkedin.com/in/aditya-zaveri",
   },
+  {name:"resume",
+    icon:FileDown,
+    href: "https://drive.google.com/file/d/14BndNCmSzSJXtUU1HC5fvIOja1N7kjzl/view?usp=sharing",
+
+  }
   // {
   //   name: "Twitter",
   //   icon: Twitter,

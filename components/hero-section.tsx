@@ -27,11 +27,15 @@ import GlowingSymbols from "./ui/GlowingSymbols";
 import PixelCard from "./ui/PixelCard";
 import PersonalPhoto from "../public/adityazaveri.png";
 import Image from "next/image";
+import { TerminalPortfolio } from './terminal-portfolio';
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
 
 export default function HeroSection() {
   const { scrollYProgress } = useScroll();
   const y = useMotionValue(0);
   const springY = useSpring(y, { stiffness: 50, damping: 10 });
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
 
   // Enhanced parallax effect
   const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 50]);
@@ -325,22 +329,23 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <a href="#projects">
-                    <Button className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300">
-                      <motion.span
-                        className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        initial={false}
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                      />
-                      <span className="relative z-10">View Projects</span>
-                      <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
-                    </Button>
-                  </a>
+                  <Button 
+                    className="w-full sm:w-auto relative overflow-hidden group dark:bg-indigo-300"
+                    onClick={() => setIsTerminalOpen(true)}
+                  >
+                    <motion.span
+                      className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={false}
+                      animate={{ x: ["-100%", "100%"] }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    <span className="relative z-10">View Projects</span>
+                    <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
+                  </Button>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -540,6 +545,42 @@ export default function HeroSection() {
       >
         <LogoCarousel />
       </motion.div>
+
+      {/* Terminal Portfolio Modal */}
+      <Dialog open={isTerminalOpen} onOpenChange={setIsTerminalOpen}>
+        <DialogContent className="max-w-4xl w-full h-[80vh] p-0 bg-transparent border-none">
+          <TerminalPortfolio 
+            portfolioData={{
+              name: "Aditya Zaveri",
+              title: "Full Stack Developer",
+              about: [
+                "Full Stack Developer passionate about creating beautiful and efficient web applications.",
+                "Experienced in modern web technologies and cloud architecture.",
+                "Always learning and exploring new technologies."
+              ],
+              skills: {
+                "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+                "Backend": ["Node.js", "Python", "Java", "Spring Boot"],
+                "Cloud": ["AWS", "Azure", "Docker", "Kubernetes"],
+                "Database": ["MongoDB", "PostgreSQL", "Redis"]
+              },
+              projects: [
+                {
+                  title: "Personal Portfolio",
+                  description: "A modern portfolio website built with Next.js and Tailwind CSS",
+                  technologies: "Next.js, TypeScript, Tailwind CSS",
+                  link: "https://github.com/zaveriadi7/portfolio"
+                }
+              ],
+              contact: {
+                email: "adityazaveri7@gmail.com",
+                github: "https://github.com/zaveriadi7"
+              }
+            }}
+            height="80vh"
+          />
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
