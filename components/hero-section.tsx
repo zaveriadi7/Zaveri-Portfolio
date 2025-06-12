@@ -24,7 +24,6 @@ import {
   slideIn,
 } from "@/lib/animations";
 import GlowingSymbols from "./ui/GlowingSymbols";
-import PixelCard from "./ui/PixelCard";
 import PersonalPhoto from "../public/adityazaveri.png";
 import Image from "next/image";
 import { TerminalPortfolio } from './terminal-portfolio';
@@ -343,7 +342,7 @@ export default function HeroSection() {
                         ease: "linear",
                       }}
                     />
-                    <span className="relative z-10">View Projects</span>
+                    <span className="relative z-10">Open Terminal View</span>
                     <ArrowRight className="ml-2 h-4 w-4 relative z-10" />
                   </Button>
                 </motion.div>
@@ -548,36 +547,71 @@ export default function HeroSection() {
 
       {/* Terminal Portfolio Modal */}
       <Dialog open={isTerminalOpen} onOpenChange={setIsTerminalOpen}>
-        <DialogContent className="max-w-4xl w-full h-[80vh] p-0 bg-transparent border-none">
+        <DialogContent className="max-w-4xl w-[95vw] sm:w-full h-[90vh] sm:h-[80vh] p-0 bg-transparent border-none">
           <TerminalPortfolio 
             portfolioData={{
               name: "Aditya Zaveri",
               title: "Full Stack Developer",
               about: [
-                "Full Stack Developer passionate about creating beautiful and efficient web applications.",
-                "Experienced in modern web technologies and cloud architecture.",
-                "Always learning and exploring new technologies."
+                "I'm a Full Stack Developer passionate about creating fast, beautiful, and user-friendly web apps with today's tech — and tomorrow's thinking.",
+                "With expertise in modern web technologies and cloud architecture, I focus on building scalable and efficient solutions.",
+                "I believe in continuous learning and staying at the forefront of technology to deliver the best possible solutions."
               ],
               skills: {
-                "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-                "Backend": ["Node.js", "Python", "Java", "Spring Boot"],
-                "Cloud": ["AWS", "Azure", "Docker", "Kubernetes"],
-                "Database": ["MongoDB", "PostgreSQL", "Redis"]
+                "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux"],
+                "Backend": ["Node.js", "Express", "Python", "Java", "Spring Boot", "REST APIs"],
+                "Cloud & DevOps": ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Git"],
+                "Database": ["MongoDB", "PostgreSQL", "Redis", "MySQL"],
+                "Tools & Others": ["VS Code", "Postman", "Jira", "Agile", "GitHub"]
               },
               projects: [
                 {
                   title: "Personal Portfolio",
-                  description: "A modern portfolio website built with Next.js and Tailwind CSS",
-                  technologies: "Next.js, TypeScript, Tailwind CSS",
+                  description: "A modern, interactive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features include smooth animations, dark mode, and a terminal-style interface.",
+                  technologies: "Next.js, TypeScript, Tailwind CSS, Framer Motion",
                   link: "https://github.com/zaveriadi7/portfolio"
+                },
+                {
+                  title: "E-commerce Platform",
+                  description: "A full-featured e-commerce solution with product management, cart functionality, and secure checkout integration.",
+                  technologies: "React, Node.js, MongoDB, Stripe",
+                  link: "https://github.com/zaveriadi7/ecommerce"
+                },
+                {
+                  title: "Task Management App",
+                  description: "A collaborative task management tool with real-time updates, user permissions, and file attachments.",
+                  technologies: "Next.js, TypeScript, Prisma, PostgreSQL",
+                  link: "https://github.com/zaveriadi7/task-manager"
                 }
               ],
               contact: {
                 email: "adityazaveri7@gmail.com",
-                github: "https://github.com/zaveriadi7"
+                github: "https://github.com/zaveriadi7",
+                linkedin: "https://linkedin.com/in/aditya-zaveri",
+                twitter: "https://twitter.com/zaveriadi7"
               }
             }}
-            height="80vh"
+            height="100%"
+            welcomeMessage={
+              <div className="mb-4">
+                <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)] text-xs sm:text-sm overflow-x-auto">
+                  {`
+  _____                    _             _   ______         _    __      _ _       
+ |_   _|                  (_)           | |  | ___ \\       | |  / _|    | (_)      
+   | | ___ _ __ _ __ ___   _ _ __   __ _| |  | |_/ /__  ___| |_| |_ ___ | |_  ___  
+   | |/ _ \\ '__| '_ \` _ \\ | | '_ \\ / _\` | |  |  __/ _ \\/ __| __|  _/ _ \\| | |/ _ \\ 
+   | |  __/ |  | | | | | || | | | | (_| | |  | | | (_) \\__ \\ |_| || (_) | | | (_) |
+   \\_/\\___|_|  |_| |_| |_|/ |_| |_|\\__,_|_|  \\_|  \\___/|___/\\__|_| \\___/|_|_|\\___/ 
+                         |__/                                                      
+`}
+                </pre>
+                <p className="text-blue-400 text-sm sm:text-base">Welcome to Aditya Zaveri's Interactive Terminal Portfolio!</p>
+                <p className="text-sm sm:text-base">
+                  Type <span className="text-blue-500 font-semibold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">help</span> to see
+                  available commands.
+                </p>
+              </div>
+            }
           />
         </DialogContent>
       </Dialog>

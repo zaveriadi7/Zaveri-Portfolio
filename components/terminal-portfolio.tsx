@@ -324,14 +324,14 @@ export function TerminalPortfolio({
           {Object.entries(portfolioData.skills || {}).map(([category, skillList]) => (
             <div
               key={category}
-              className="bg-blue-950/10 p-4 rounded-md border border-blue-900/50 shadow-[0_0_10px_rgba(29,78,216,0.15)]"
+              className="bg-blue-950/10 p-3 sm:p-4 rounded-md border border-blue-900/50 shadow-[0_0_10px_rgba(29,78,216,0.15)]"
             >
               <h3 className="text-lg font-semibold text-blue-400 mb-2">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillList.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-1 bg-blue-900/30 border border-blue-700/50 rounded-full text-sm text-blue-300"
+                    className="px-2 py-1 bg-blue-900/30 border border-blue-700/50 rounded-full text-xs sm:text-sm text-blue-300"
                   >
                     {skill}
                   </span>
@@ -482,19 +482,19 @@ export function TerminalPortfolio({
 
   const defaultWelcomeMessage = (
     <div className="mb-4">
-      <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">
+      <pre className="text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)] text-xs sm:text-sm overflow-x-auto">
         {`
  _____                    _             _   ______         _    __      _ _       
-|_   _|                  (_)           | |  | ___ \\       | |  / _|    | (_)      
-  | | ___ _ __ _ __ ___   _ _ __   __ _| |  | |_/ /__  ___| |_| |_ ___ | |_  ___  
-  | |/ _ \\ '__| '_ \` _ \\ | | '_ \\ / _\` | |  |  __/ _ \\/ __| __|  _/ _ \\| | |/ _ \\ 
-  | |  __/ |  | | | | | || | | | | (_| | |  | | | (_) \\__ \\ |_| || (_) | | | (_) |
-  \\_/\\___|_|  |_| |_| |_|/ |_| |_|\\__,_|_|  \\_|  \\___/|___/\\__|_| \\___/|_|_|\\___/ 
-                        |__/                                                      
+ |_   _|                  (_)           | |  | ___ \\       | |  / _|    | (_)      
+   | | ___ _ __ _ __ ___   _ _ __   __ _| |  | |_/ /__  ___| |_| |_ ___ | |_  ___  
+   | |/ _ \\ '__| '_ \` _ \\ | | '_ \\ / _\` | |  |  __/ _ \\/ __| __|  _/ _ \\| | |/ _ \\ 
+   | |  __/ |  | | | | | || | | | | (_| | |  | | | (_) \\__ \\ |_| || (_) | | | (_) |
+   \\_/\\___|_|  |_| |_| |_|/ |_| |_|\\__,_|_|  \\_|  \\___/|___/\\__|_| \\___/|_|_|\\___/ 
+                         |__/                                                      
 `}
       </pre>
-      <p className="text-blue-400">Welcome to my interactive terminal portfolio!</p>
-      <p>
+      <p className="text-blue-400 text-sm sm:text-base">Welcome to my interactive terminal portfolio!</p>
+      <p className="text-sm sm:text-base">
         Type <span className="text-blue-500 font-semibold drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">help</span> to see
         available commands.
       </p>
@@ -609,21 +609,22 @@ export function TerminalPortfolio({
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <div className="mx-auto text-sm font-semibold text-blue-500">terminal@portfolio</div>
+        <div className="mx-2 text-sm font-semibold text-blue-500">terminal@portfolio</div>
       </div>
       <div
         ref={terminalRef}
-        className="p-6 overflow-y-auto bg-black font-mono"
+        className="p-4 sm:p-6 overflow-y-auto bg-black font-mono text-sm sm:text-base"
         style={{ height }}
         onClick={() => inputRef.current?.focus()}
       >
         {output.map((line, index) => (
-          <div key={index} className="mb-2">
+          <div key={index} className="mb-2 break-words">
             {line}
           </div>
         ))}
         <div className="flex items-center mt-1 group">
-          <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)]">visitor@portfolio</span>:
+          <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] hidden sm:inline">zaveri@portfolio</span>
+          <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)] sm:hidden">visitor</span>:
           <span className="text-purple-400">~$</span>&nbsp;
           <input
             ref={inputRef}
@@ -631,7 +632,7 @@ export function TerminalPortfolio({
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent outline-none border-none text-blue-400 caret-transparent"
+            className="flex-1 bg-transparent outline-none border-none text-blue-400 caret-transparent text-sm sm:text-base"
             aria-label="Terminal input"
           />
           <span className="animate-pulse text-blue-500 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">▋</span>
