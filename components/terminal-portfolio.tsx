@@ -500,7 +500,7 @@ export function TerminalPortfolio({
 
     addToOutput(
       <div key={`command-${Date.now()}`}>
-        <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)]">visitor@portfolio</span>:
+        <span className="text-blue-500 drop-shadow-[0_0_2px_rgba(59,130,246,0.5)]">zaveri@portfolio</span>:
         <span className="text-purple-400">~$</span> {trimmedInput}
       </div>,
     )
